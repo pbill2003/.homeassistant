@@ -1,0 +1,16 @@
+purge_keep_days: 3
+exclude:
+  domains:
+  - updater
+  - camera
+  - media_player
+  - sun
+  - met
+  - weather
+  - zone
+  - group
+  - calendar
+  - cloud
+  - mobile_app
+  entities:
+  - sensor.dhw_sensor_time_increment

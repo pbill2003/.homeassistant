@@ -1,0 +1,293 @@
+evohome_custom:
+  alias: Evohome Custom
+  sequence:
+  - service: evohome.set_system_mode
+    data:
+      mode: Custom
+  mode: single
+evohome_followschedule:
+  alias: Evohome FollowSchedule
+  sequence:
+  - service: evohome.reset_system
+    data: {}
+  mode: single
+otgw_reset:
+  alias: OTGW Reset
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: set/otgw/control_setpoint
+      payload: 0
+  - service: mqtt.publish
+    data:
+      topic: set/otgw/max_modulation
+      payload: T
+  - service: automation.turn_off
+    data: {}
+    entity_id: automation.otgw_follow_evohome
+  - service: automation.turn_off
+    data: {}
+    entity_id: automation.otgw_follow_evohome_10_0
+  mode: single
+create_otgw_sensors:
+  alias: Create otgw sensors
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aab/otgw_boiler_setpoint/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"OTGW Boiler Setpoint\"\
+        ,\n  \"unique_id\": \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aab_sensor_otgw_boiler_setpoint\"\
+        ,\n  \"device_class\": \"temperature\",\n  \"unit_of_measurement\": \"°C\"\
+        ,\n  \"state_topic\": \"value/otgw/boiler_setpoint\",\n  \"device\": {\n \
+        \     \"manufacturer\": \"Pete\",\n      \"name\": \"PY-OTGW-MQTT\",\n   \
+        \   \"model\": \"v2.0\",\n      \"identifiers\": [\"py-otgw-mqtt\", \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aab\"\
+        ]\n    }\n}\n"
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aac/otgw_evohome_setpoint/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"OTGW Evohome Setpoint\"\
+        ,\n  \"unique_id\": \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aac_sensor_otgw_evohome_setpoint\"\
+        ,\n  \"device_class\": \"temperature\",\n  \"unit_of_measurement\": \"°C\"\
+        ,\n  \"state_topic\": \"value/otgw/evohome_setpoint\",\n  \"device\": {\n\
+        \      \"manufacturer\": \"Pete\",\n      \"name\": \"PY-OTGW-MQTT\",\n  \
+        \    \"model\": \"v2.0\",\n      \"identifiers\": [\"py-otgw-mqtt\", \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aac\"\
+        ]\n    }\n}\n"
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aad/otgw_flame_modulation/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"OTGW Flame Modulation\"\
+        ,\n  \"unique_id\": \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aad_sensor_otgw_flame_modulation\"\
+        ,\n  \"device_class\": \"temperature\",\n  \"unit_of_measurement\": \"%\"\
+        ,\n  \"state_topic\": \"value/otgw/boiler_relative_modulation_level\",\n \
+        \ \"device\": {\n      \"manufacturer\": \"Pete\",\n      \"name\": \"PY-OTGW-MQTT\"\
+        ,\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"py-otgw-mqtt\", \"\
+        py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aad\"]\n    }\n}\n"
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aae/otgw_boiler_max_modulation/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"OTGW Boiler Max Modulation\"\
+        ,\n  \"unique_id\": \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aae_sensor_otgw_boiler_max_modulation\"\
+        ,\n  \"device_class\": \"temperature\",\n  \"unit_of_measurement\": \"%\"\
+        ,\n  \"state_topic\": \"value/otgw/boiler_max_relative_modulation_level\"\
+        ,\n  \"device\": {\n      \"manufacturer\": \"Pete\",\n      \"name\": \"\
+        PY-OTGW-MQTT\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"py-otgw-mqtt\"\
+        , \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aae\"]\n    }\n}\n"
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aaf/otgw_evohome_max_modulation/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"OTGW Evohome Max Modulation\"\
+        ,\n  \"unique_id\": \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aaf_sensor_otgw_evohome_max_modulation\"\
+        ,\n  \"device_class\": \"temperature\",\n  \"unit_of_measurement\": \"%\"\
+        ,\n  \"state_topic\": \"value/otgw/evohome_max_relative_modulation_level\"\
+        ,\n  \"device\": {\n      \"manufacturer\": \"Pete\",\n      \"name\": \"\
+        PY-OTGW-MQTT\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"py-otgw-mqtt\"\
+        , \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aaf\"]\n    }\n}\n"
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aba/otgw_ch_feed_boiler/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"OTGW CH Feed Boiler\"\
+        ,\n  \"unique_id\": \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aba_sensor_otgw_ch_feed_boiler\"\
+        ,\n  \"device_class\": \"temperature\",\n  \"unit_of_measurement\": \"°C\"\
+        ,\n  \"state_topic\": \"value/otgw/boiler_water_temperature\",\n  \"device\"\
+        : {\n      \"manufacturer\": \"Pete\",\n      \"name\": \"PY-OTGW-MQTT\",\n\
+        \      \"model\": \"v2.0\",\n      \"identifiers\": [\"py-otgw-mqtt\", \"\
+        py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aba\"]\n    }\n}\n"
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abb/otgw_ch_return_boiler/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"OTGW CH Return Boiler\"\
+        ,\n  \"unique_id\": \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abb_sensor_otgw_ch_return_boiler\"\
+        ,\n  \"device_class\": \"temperature\",\n  \"unit_of_measurement\": \"°C\"\
+        ,\n  \"state_topic\": \"value/otgw/boiler_return_water_temperature\",\n  \"\
+        device\": {\n      \"manufacturer\": \"Pete\",\n      \"name\": \"PY-OTGW-MQTT\"\
+        ,\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"py-otgw-mqtt\", \"\
+        py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abb\"]\n    }\n}\n"
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abc/otgw_ch_water_pressure/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"OTGW CH Water Pressure\"\
+        ,\n  \"unique_id\": \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abc_sensor_otgw_ch_water_pressure\"\
+        ,\n  \"device_class\": \"pressure\",\n  \"unit_of_measurement\": \"bar\",\n\
+        \  \"state_topic\": \"value/otgw/boiler_water_pressure\",\n  \"device\": {\n\
+        \      \"manufacturer\": \"Pete\",\n      \"name\": \"PY-OTGW-MQTT\",\n  \
+        \    \"model\": \"v2.0\",\n      \"identifiers\": [\"py-otgw-mqtt\", \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abc\"\
+        ]\n    }\n}\n"
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aca/otgw_ch_max_setpoint/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"OTGW CH Max Setpoint\"\
+        ,\n  \"unique_id\": \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aca_sensor_otgw_ch_max_setpoint\"\
+        ,\n  \"device_class\": \"temperature\",\n  \"unit_of_measurement\": \"°C\"\
+        ,\n  \"state_topic\": \"value/otgw/boiler_max_ch_water_setpoint\",\n  \"device\"\
+        : {\n      \"manufacturer\": \"Pete\",\n      \"name\": \"PY-OTGW-MQTT\",\n\
+        \      \"model\": \"v2.0\",\n      \"identifiers\": [\"py-otgw-mqtt\", \"\
+        py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aca\"]\n    }\n}\n"
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/binary_sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abd/otgw_flame_status/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"OTGW Flame Status\",\n\
+        \  \"unique_id\": \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abd_binary_sensor_otgw_flame_status\"\
+        ,\n  \"payload_on\": \"True\",\n  \"payload_off\": \"False\",    \n  \"state_topic\"\
+        : \"value/otgw/flame_status\",\n  \"device\": {\n      \"manufacturer\": \"\
+        Pete\",\n      \"name\": \"PY-OTGW-MQTT\",\n      \"model\": \"v2.0\",\n \
+        \     \"identifiers\": [\"py-otgw-mqtt\", \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abd\"\
+        ]\n    }\n}\n"
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/binary_sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abe/otgw_ch_status/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"OTGW CH Status\",\n  \"\
+        unique_id\": \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abe_binary_sensor_otgw_ch_status\"\
+        ,\n  \"payload_on\": \"True\",\n  \"payload_off\": \"False\",    \n  \"state_topic\"\
+        : \"value/otgw/ch_active\",\n  \"device\": {\n      \"manufacturer\": \"Pete\"\
+        ,\n      \"name\": \"PY-OTGW-MQTT\",\n      \"model\": \"v2.0\",\n      \"\
+        identifiers\": [\"py-otgw-mqtt\", \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abe\"\
+        ]\n    }\n}\n"
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/binary_sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abf/otgw_dhw_status/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"OTGW DHW Status\",\n \
+        \ \"unique_id\": \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abf_binary_sensor_otgw_dhw_status\"\
+        ,\n  \"payload_on\": \"True\",\n  \"payload_off\": \"False\",    \n  \"state_topic\"\
+        : \"value/otgw/dhw_active\",\n  \"device\": {\n      \"manufacturer\": \"\
+        Pete\",\n      \"name\": \"PY-OTGW-MQTT\",\n      \"model\": \"v2.0\",\n \
+        \     \"identifiers\": [\"py-otgw-mqtt\", \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abf\"\
+        ]\n    }\n}\n"
+      retain: true
+  mode: single
+create_solar_sensors:
+  alias: Create solar sensors
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/sensor/epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fab/solar_panel_voltage/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"Solar panel voltage\"\
+        ,\n  \"unique_id\": \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fab_sensor_solar_panel_voltage\"\
+        ,\n  \"unit_of_measurement\": \"V\",\n  \"value_template\": \"{{ \"{{ value_json\
+        \ | float/100}}\" }}\",\n  \"state_topic\": \"homie/epsolar/epsolarsensor/solar-voltage\"\
+        ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
+        : \"EPSOLAR\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"epsolar\"\
+        , \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fab\"]\n    }\n}\n"
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/sensor/epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fac/solar_panel_current/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"Solar panel current\"\
+        ,\n  \"unique_id\": \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fac_sensor_solar_panel_current\"\
+        ,\n  \"unit_of_measurement\": \"A\",\n  \"value_template\": \"{{ \"{{ value_json\
+        \ | float/100}}\" }}\",\n  \"state_topic\": \"homie/epsolar/epsolarsensor/solar-current\"\
+        ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
+        : \"EPSOLAR\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"epsolar\"\
+        , \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fac\"]\n    }\n}\n"
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/sensor/epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fad/solar_panel_power/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"Solar panel power\",\n\
+        \  \"unique_id\": \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fad_sensor_solar_panel_power\"\
+        ,\n  \"unit_of_measurement\": \"W\",\n  \"value_template\": \"{{ \"{{ value_json\
+        \ | float/100}}\" }}\",\n  \"state_topic\": \"homie/epsolar/epsolarsensor/solar-power\"\
+        ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
+        : \"EPSOLAR\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"epsolar\"\
+        , \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fad\"]\n    }\n}\n"
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/sensor/epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fba/load_voltage/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"Load voltage\",\n  \"\
+        unique_id\": \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fba_sensor_load_voltage\"\
+        ,\n  \"unit_of_measurement\": \"V\",\n  \"value_template\": \"{{ \"{{ value_json\
+        \ | float/100}}\" }}\",\n  \"state_topic\": \"homie/epsolar/epsolarsensor/load-voltage\"\
+        ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
+        : \"EPSOLAR\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"epsolar\"\
+        , \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fba\"]\n    }\n}\n"
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/sensor/epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fbb/load_current/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"Load current\",\n  \"\
+        unique_id\": \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fbb_sensor_load_current\"\
+        ,\n  \"unit_of_measurement\": \"V\",\n  \"value_template\": \"{{ \"{{ value_json\
+        \ | float/100}}\" }}\",\n  \"state_topic\": \"homie/epsolar/epsolarsensor/load-current\"\
+        ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
+        : \"EPSOLAR\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"epsolar\"\
+        , \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fbb\"]\n    }\n}\n"
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/sensor/epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fbc/load_power/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"Load power\",\n  \"unique_id\"\
+        : \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fbc_sensor_load_power\",\n\
+        \  \"unit_of_measurement\": \"W\",\n  \"value_template\": \"{{ \"{{ value_json\
+        \ | float/100}}\" }}\",\n  \"state_topic\": \"homie/epsolar/epsolarsensor/load-power\"\
+        ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
+        : \"EPSOLAR\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"epsolar\"\
+        , \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fbc\"]\n    }\n}\n"
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/sensor/epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fca/battery_voltage/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"Battery voltage\",\n \
+        \ \"unique_id\": \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fca_sensor_battery_voltage\"\
+        ,\n  \"unit_of_measurement\": \"V\",\n  \"value_template\": \"{{ \"{{ value_json\
+        \ | float/100}}\" }}\",\n  \"state_topic\": \"homie/epsolar/epsolarsensor/battery-voltage\"\
+        ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
+        : \"EPSOLAR\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"epsolar\"\
+        , \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fca\"]\n    }\n}\n"
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/sensor/epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fcb/battery_current/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"Battery current\",\n \
+        \ \"unique_id\": \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fcb_sensor_battery_current\"\
+        ,\n  \"unit_of_measurement\": \"A\",\n  \"value_template\": \"{{ \"{{ value_json\
+        \ | float/100}}\" }}\",\n  \"state_topic\": \"homie/epsolar/epsolarsensor/battery-current\"\
+        ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
+        : \"EPSOLAR\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"epsolar\"\
+        , \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fcb\"]\n    }\n}\n"
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/sensor/epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fcc/battery_percentage/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"Battery percentage\",\n\
+        \  \"unique_id\": \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fcc_sensor_battery_percentage\"\
+        ,\n  \"unit_of_measurement\": \"%\",\n  \"state_topic\": \"homie/epsolar/epsolarsensor/battery-level\"\
+        ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
+        : \"EPSOLAR\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"epsolar\"\
+        , \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fcc\"]\n    }\n}\n"
+      retain: true
+  mode: single
+create_esp8266_sensors:
+  alias: Create ESP8266 sensors
+  sequence:
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/sensor/esp8266-da39a3ee5e6b4b0d3255bfef95601890afd80eaa/sensor_relay_wifi/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"Relay Wifi\",\n  \"unique_id\"\
+        : \"esp8266-da39a3ee5e6b4b0d3255bfef95601890afd80eaa_sensor_relay_wifi\",\n\
+        \  \"unit_of_measurement\": \"%\",\n  \"state_topic\": \"homie/relay-controller/$stats/signal\"\
+        ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
+        : \"ESP8622\",\n      \"model\": \"v1.0\",\n      \"identifiers\": [\"esp8266\"\
+        , \"esp8266-da39a3ee5e6b4b0d3255bfef95601890afd80eaa\"]\n    }\n}\n"
+      retain: true
+  - service: mqtt.publish
+    data:
+      topic: homeassistant/sensor/esp8266-da39a3ee5e6b4b0d3255bfef95601890afd80eab/sensor_epsolar_wifi/config
+      payload: "{\n  \"platform\": \"mqtt\",\n  \"name\": \"EPSolar Wifi\",  \n  \"\
+        unique_id\": \"esp8266-da39a3ee5e6b4b0d3255bfef95601890afd80eab_sensor_epsolar_wifi\"\
+        ,\n  \"unit_of_measurement\": \"%\",\n  \"state_topic\": \"homie/epsolar/$stats/signal\"\
+        ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
+        : \"ESP8622\",\n      \"model\": \"v1.0\",\n      \"identifiers\": [\"esp8266\"\
+        , \"esp8266-da39a3ee5e6b4b0d3255bfef95601890afd80eab\"]\n    }\n}\n"
+      retain: true
+  mode: single

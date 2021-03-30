@@ -1,0 +1,17 @@
+{
+    "version": 1,
+    "key": "zone",
+    "data": {
+        "items": [
+            {
+                "name": "Cycling Home",
+                "icon": "mdi:bike",
+                "latitude": 51.4551835596923,
+                "longitude": -2.627363204956055,
+                "passive": false,
+                "radius": 925.0,
+                "id": "cycling_home"
+            }
+        ]
+    }
+}

@@ -1,0 +1,188 @@
+- platform: time_date
+  display_options:
+      - 'time'
+      - 'date'
+
+# - platform: mqtt
+  # name: "OTGW Outside Temp"
+  # unit_of_measurement: '°C'
+  # state_topic: "value/otgw/boiler_outside_temperature" 
+# #  state_topic: "value/otgw/outside_temperature"
+  
+# - platform: mqtt
+  # name: "OTGW OEM Fault Code"
+  # state_topic: "value/otgw/oem_fault_code" 
+
+### EVOHOME ###
+
+- platform: template
+  sensors:
+    current_temperature_loft_room:
+      friendly_name: "Loft Room Temperature"
+      value_template: "{{ state_attr('climate.loft_room', 'current_temperature') }}"
+      unit_of_measurement: '°C'
+
+- platform: template
+  sensors:
+    setpoint_temperature_loft_room:
+      friendly_name: "Loft Room Setpoint"
+      value_template: "{{ state_attr('climate.loft_room', 'temperature') }}"
+      unit_of_measurement: '°C'
+
+- platform: template
+  sensors:
+    current_temperature_back_room:
+      friendly_name: "Back Room Temperature"
+      value_template: "{{ state_attr('climate.back_room', 'current_temperature') }}"
+      unit_of_measurement: '°C'
+
+- platform: template
+  sensors:
+    setpoint_temperature_back_room:
+      friendly_name: "Back Room Setpoint"
+      value_template: "{{ state_attr('climate.back_room', 'temperature') }}"
+      unit_of_measurement: '°C'
+
+- platform: template
+  sensors:
+    current_temperature_front_room:
+      friendly_name: "Front Room Temperature"
+      value_template: "{{ state_attr('climate.front_room', 'current_temperature') }}"
+      unit_of_measurement: '°C'
+      
+- platform: template
+  sensors:
+    setpoint_temperature_front_room:
+      friendly_name: "Front Room Setpoint"
+      value_template: "{{ state_attr('climate.front_room', 'temperature') }}"       
+      unit_of_measurement: '°C'
+      
+- platform: template
+  sensors:
+    current_temperature_front_bedroom:
+      friendly_name: "Front Bedroom Temperature"
+      value_template: "{{ state_attr('climate.front_bedroom', 'current_temperature') }}"
+      unit_of_measurement: '°C'
+      
+- platform: template
+  sensors:
+    setpoint_temperature_front_bedroom:
+      friendly_name: "Front Bedroom Setpoint"
+      value_template: "{{ state_attr('climate.front_bedroom', 'temperature') }}"
+      unit_of_measurement: '°C'
+
+- platform: template
+  sensors:
+    current_temperature_kitchen:
+      friendly_name: "Kitchen Temperature"
+      value_template: "{{ state_attr('climate.kitchen', 'current_temperature') }}"
+      unit_of_measurement: '°C'
+      
+- platform: template
+  sensors:
+    setpoint_temperature_kitchen:
+      friendly_name: "Kitchen Setpoint"
+      value_template: "{{ state_attr('climate.kitchen', 'temperature') }}"
+      unit_of_measurement: '°C'
+
+
+- platform: template
+  sensors:
+    current_temperature_hall:
+      friendly_name: "Hall Temperature"
+      value_template: "{{ state_attr('climate.hall', 'current_temperature') }}"
+      unit_of_measurement: '°C'
+      
+- platform: template
+  sensors:
+    setpoint_temperature_hall:
+      friendly_name: "Hall Setpoint"
+      value_template: "{{ state_attr('climate.hall', 'temperature') }}"
+      unit_of_measurement: '°C'
+
+
+
+
+### DHW timing
+
+- platform: template
+  sensors:
+    dhw_sensor_time_increment:
+      friendly_name: "DHW Sensor Time Increment"
+      value_template: >-
+        {% if is_state('binary_sensor.dhw_sensor', 'on') %}
+          {{ (( now().timestamp() ) - (state_attr('input_datetime.dhw_sensor_on', 'timestamp'))) | timestamp_custom("%M:%S") }}
+        {% elif is_state('binary_sensor.dhw_sensor', 'off') %}
+          {{ ((state_attr('input_datetime.dhw_sensor_off', 'timestamp')) - (state_attr('input_datetime.dhw_sensor_on', 'timestamp'))) | timestamp_custom("%M:%S") }}
+        {% else %}
+        Unknown
+        {% endif %}
+
+
+
+
+
+### CH pipe adjustments & delta
+  
+- platform: template
+  sensors:
+    ch_feed_temperature_adjusted:  
+      friendly_name: "CH Feed temperature adjusted"
+      value_template: >-
+        {{ '%0.1f'|format(states('sensor.ch_feed_temperature')|float + 0.05) }}
+      unit_of_measurement: '°C'         
+   
+- platform: template
+  sensors:
+    ch_return_temperature_adjusted:  
+      friendly_name: "CH Return temperature adjusted"
+      value_template: >-
+        {{ '%0.1f'|format(states('sensor.ch_return_temperature')|float + 0.0) }}
+      unit_of_measurement: '°C'      
+ 
+- platform: template
+  sensors:
+    ch_delta_temperature:
+      friendly_name: "CH Delta temperature"
+      value_template: >-
+        {{ (states('sensor.ch_feed_temperature_adjusted')|float)-(states('sensor.ch_return_temperature_adjusted')|float) }}
+      unit_of_measurement: '°C'
+
+
+### DHW bathroom supply pipe calcs
+
+
+- platform: template
+  sensors:
+    dhw_bathroom_temperature_gradient:
+      friendly_name: "DHW Bathroom Temperature Gradient"
+      value_template: "{{ (state_attr('binary_sensor.dhw_bathroom_temperature_trend', 'gradient')) | float }}"
+
+### Max relative modulation calcs
+
+- platform: template
+  sensors:
+    otgw_boiler_max_modulation_adjusted:
+      friendly_name: "OTGW Boiler Max Modulation adjusted"
+      value_template: >-
+        {% if (states('sensor.otgw_evohome_setpoint')|float > 40) %}
+          {{ 100.0 }}
+        {% else %}
+          {{ 0.0 }}
+        {% endif %}        
+      unit_of_measurement: '%'
+
+
+### Weather
+
+
+- platform: clientraw
+  url: "http://www.martynhicks.uk/weather/clientraw.txt"
+  interval: 5
+  monitored_conditions:
+    - temp
+    - humidity
+
+
+
+

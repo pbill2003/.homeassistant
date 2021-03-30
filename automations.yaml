@@ -1,0 +1,402 @@
+- id: '1601119773176'
+  alias: OTGW Enable ATAG ECO
+  description: ''
+  trigger:
+  - platform: time_pattern
+    minutes: /30
+  condition: []
+  action:
+  - service: mqtt.publish
+    data:
+      topic: set/otgw/hot_water/enable
+      payload: 0
+  mode: single
+- id: '1601121160850'
+  alias: Pump Solar Auto On
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.battery_voltage
+    for: 00:04:00
+    above: '13.6'
+  condition:
+  - condition: numeric_state
+    entity_id: sensor.solar_panel_power
+    above: '4'
+  action:
+  - service: input_boolean.turn_on
+    data: {}
+    entity_id: input_boolean.auto_pump
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.pump_switch
+  mode: single
+- id: '1601121355747'
+  alias: Pump Solar Auto Off
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.solar_panel_power
+    for: 00:10:00
+    below: '5'
+  condition: []
+  action:
+  - service: input_boolean.turn_off
+    data: {}
+    entity_id: input_boolean.auto_pump
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.pump_switch
+  mode: single
+- id: '1601121501673'
+  alias: Bathroom fan On
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: binary_sensor.dhw_bathroom_temperature_trend
+    above: '0.1'
+    attribute: gradient
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.shelly1_a4cf12f41fd4
+  mode: single
+- id: '1601121557392'
+  alias: Bathroom Fan Off Long
+  description: Includes variable delay
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.dhw_sensor
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
+  - delay: '{{  ''00:{}''.format(states(''sensor.dhw_sensor_time_increment'')[-5:])
+      }}'
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.shelly1_a4cf12f41fd4
+  mode: restart
+- id: '1601121864100'
+  alias: DHW Sensor increment time
+  description: ''
+  trigger:
+  - platform: time_pattern
+    seconds: /5
+  condition:
+  - condition: state
+    entity_id: binary_sensor.dhw_sensor
+    state: 'on'
+  action:
+  - service: homeassistant.update_entity
+    data: {}
+    entity_id: sensor.dhw_sensor_time_increment
+  mode: single
+- id: '1601122517939'
+  alias: DHW Sensor on time
+  description: Time that the DHW sensor switches on
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.dhw_sensor
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - data_template:
+      date: '{{ now().timestamp() | timestamp_custom("%Y-%m-%d", true) }}
+
+        '
+      time: '{{ now().timestamp() | timestamp_custom("%H:%M:%S", true) }}
+
+        '
+    entity_id: input_datetime.dhw_sensor_on
+    service: input_datetime.set_datetime
+  mode: single
+- id: '1601122872891'
+  alias: DHW Sensor off time
+  description: Time that the DHW sensor switches off
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.dhw_sensor
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - data_template:
+      date: '{{ now().timestamp() | timestamp_custom("%Y-%m-%d", true) }}
+
+        '
+      entity_id: input_datetime.dhw_sensor_off
+      time: '{{ now().timestamp() | timestamp_custom("%H:%M:%S", true) }}
+
+        '
+    entity_id: input_datetime.dhw_sensor_off
+    service: input_datetime.set_datetime
+  mode: single
+- id: '1601123312636'
+  alias: Home assistant startup - All switches off
+  description: ''
+  trigger:
+  - platform: homeassistant
+    event: start
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.pump_switch
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.light_switch
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.smartplug
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.shelly1_a4cf12f41fd4
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.shelly1_a4cf12f46677
+  mode: single
+- id: '1601150705622'
+  alias: Underfloor fan On
+  description: ''
+  trigger:
+  - platform: time
+    at: '15:00'
+  condition:
+  - condition: numeric_state
+    entity_id: sensor.clientraw_humidity
+    below: '55'
+  action:
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.shelly1_a4cf12f46677
+  mode: single
+- id: '1601150755383'
+  alias: Underfloor fan Off
+  description: ''
+  trigger:
+  - platform: time
+    at: '17:00'
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.shelly1_a4cf12f46677
+  mode: single
+- id: '1601151093811'
+  alias: Pump Auto off
+  description: 60 mins limit after manual switch on
+  trigger:
+  - platform: state
+    entity_id: switch.pump_switch
+    to: 'on'
+    for: 00:60:00
+  condition:
+  - condition: state
+    entity_id: input_boolean.auto_pump
+    state: 'off'
+  action:
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.pump_switch
+  mode: single
+- id: '1601151235217'
+  alias: Light Auto off
+  description: 60 mins limit after manual switch on
+  trigger:
+  - platform: state
+    entity_id: switch.light_switch
+    to: 'on'
+    for: 00:60:00
+  condition:
+  - condition: state
+    entity_id: input_boolean.auto_light
+    state: 'off'
+  action:
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.light_switch
+  mode: single
+- id: '1601151392561'
+  alias: Set ATAG Outside Temp
+  description: ''
+  trigger:
+  - platform: time_pattern
+    minutes: /30
+  condition: []
+  action:
+  - service: shell_command.run_ad5252
+    data: {}
+  mode: single
+- id: '1601151602680'
+  alias: Light Schedule On
+  description: ''
+  trigger:
+  - platform: template
+    value_template: '{{ states.sensor.time.state == states.input_datetime.light_on.state[0:5]
+      }}'
+  condition:
+  - condition: numeric_state
+    entity_id: sensor.battery_percentage
+    above: '60'
+  action:
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.light_switch
+  - service: input_boolean.turn_on
+    data: {}
+    entity_id: input_boolean.auto_light
+  mode: single
+- id: '1601151798384'
+  alias: Light Schedule Off
+  description: ''
+  trigger:
+  - platform: template
+    value_template: '{{ states.sensor.time.state == states.input_datetime.light_off.state[0:5]}}'
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.light_switch
+  - service: input_boolean.turn_off
+    data: {}
+    entity_id: input_boolean.auto_light
+  mode: single
+- id: '1604180361250'
+  alias: Coming home coffee
+  description: ''
+  trigger:
+  - platform: zone
+    entity_id: device_tracker.iphonexr
+    zone: zone.cycling_home
+    event: enter
+  condition:
+  - condition: time
+    before: '13:30'
+    after: '10:00'
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    - sat
+    - sun
+  action:
+  - type: turn_on
+    device_id: d2ed512eff6411ea9dc23d4336761f0a
+    entity_id: switch.smartplug
+    domain: switch
+  mode: single
+- id: '1604346592877'
+  alias: OTGW follow Evohome
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.otgw_evohome_setpoint
+    for: 00:00:10
+  condition:
+  - condition: numeric_state
+    entity_id: sensor.otgw_evohome_setpoint
+    below: '70'
+    above: '15'
+  - condition: time
+    after: 06:00:00
+    before: '23:59:59'
+  action:
+  - service: mqtt.publish
+    data:
+      topic: set/otgw/max_modulation
+      payload: '{{ states.sensor.otgw_boiler_max_modulation_adjusted.state }}'
+  - service: mqtt.publish
+    data:
+      topic: set/otgw/control_setpoint
+      payload: '{{ states.sensor.otgw_evohome_setpoint.state }}'
+  - service: mqtt.publish
+    data:
+      topic: set/otgw/central_heating/enable
+      payload: 1
+  mode: restart
+- id: '1604354760012'
+  alias: OTGW follow Evohome = 10.0
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.otgw_evohome_setpoint
+    for: 00:03:00
+    below: '15'
+  condition: []
+  action:
+  - service: mqtt.publish
+    data:
+      topic: set/otgw/control_setpoint
+      payload: 10
+  - service: mqtt.publish
+    data:
+      topic: set/otgw/central_heating/enable
+      payload: 0
+  - service: mqtt.publish
+    data:
+      topic: set/otgw/max_modulation
+      payload: 0
+  mode: single
+- id: '1609165451438'
+  alias: Bathroom fan On 2
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.dhw_sensor
+    from: 'off'
+    to: 'on'
+  condition:
+  - condition: numeric_state
+    entity_id: sensor.dhw_bathroom_temperature
+    above: '34'
+  action:
+  - service: switch.turn_on
+    data: {}
+    entity_id: switch.shelly1_a4cf12f41fd4
+  mode: single
+- id: '1611692669248'
+  alias: OTGW Notify Evohome Setpoint
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.otgw_evohome_setpoint
+  condition:
+  - condition: numeric_state
+    entity_id: sensor.otgw_evohome_setpoint
+    below: '70'
+    above: '9'
+  action:
+  - service: notify.notify
+    data:
+      message: 'Setpoint is {{ states(''sensor.otgw_evohome_setpoint'') }} at {{ states.sensor.time.state
+        }} '
+      title: Evohome setpoint change
+  mode: single
+- id: '1611868918817'
+  alias: OTGW Notify Boiler Setpoint
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.otgw_boiler_setpoint
+  condition:
+  - condition: numeric_state
+    entity_id: sensor.otgw_boiler_setpoint
+    below: '70'
+    above: '9'
+  action:
+  - service: notify.notify
+    data:
+      message: 'Setpoint is {{ states(''sensor.otgw_boiler_setpoint'') }} at {{ states.sensor.time.state
+        }} '
+      title: Boiler setpoint change
+  mode: single

@@ -1,0 +1,229 @@
+{
+    "version": 1,
+    "key": "lovelace",
+    "data": {
+        "config": {
+            "title": "Home",
+            "views": [
+                {
+                    "path": "default_view",
+                    "title": "Home",
+                    "badges": [
+                        {
+                            "entity": "binary_sensor.dhw_sensor"
+                        },
+                        {
+                            "entity": "binary_sensor.updater"
+                        },
+                        {
+                            "entity": "binary_sensor.otgw_flame_status"
+                        },
+                        {
+                            "entity": "binary_sensor.otgw_ch_status"
+                        },
+                        {
+                            "entity": "binary_sensor.otgw_dhw_status"
+                        },
+                        {
+                            "entity": "person.pete"
+                        },
+                        {
+                            "entity": "sensor.time"
+                        },
+                        {
+                            "entity": "sensor.date"
+                        },
+                        {
+                            "entity": "sensor.current_temperature_loft_room"
+                        },
+                        {
+                            "entity": "sensor.setpoint_temperature_loft_room"
+                        },
+                        {
+                            "entity": "sensor.current_temperature_back_room"
+                        },
+                        {
+                            "entity": "sensor.setpoint_temperature_back_room"
+                        },
+                        {
+                            "entity": "sensor.current_temperature_front_room"
+                        },
+                        {
+                            "entity": "sensor.setpoint_temperature_front_room"
+                        },
+                        {
+                            "entity": "sensor.current_temperature_front_bedroom"
+                        },
+                        {
+                            "entity": "sensor.setpoint_temperature_front_bedroom"
+                        },
+                        {
+                            "entity": "sensor.current_temperature_kitchen"
+                        },
+                        {
+                            "entity": "sensor.setpoint_temperature_kitchen"
+                        },
+                        {
+                            "entity": "sensor.current_temperature_hall"
+                        },
+                        {
+                            "entity": "sensor.setpoint_temperature_hall"
+                        },
+                        {
+                            "entity": "sensor.dhw_sensor_time_increment"
+                        },
+                        {
+                            "entity": "sensor.ch_return_temperature_adjusted"
+                        },
+                        {
+                            "entity": "sensor.ch_feed_temperature_adjusted"
+                        },
+                        {
+                            "entity": "sensor.ch_delta_temperature"
+                        },
+                        {
+                            "entity": "sensor.clientraw_temperature"
+                        },
+                        {
+                            "entity": "sensor.clientraw_humidity"
+                        },
+                        {
+                            "entity": "sensor.smartplug_amps"
+                        },
+                        {
+                            "entity": "sensor.smartplug_watts"
+                        },
+                        {
+                            "entity": "sensor.smartplug_total_kwh"
+                        },
+                        {
+                            "entity": "sensor.smartplug_volts"
+                        },
+                        {
+                            "entity": "sensor.smartplug_today_kwh"
+                        },
+                        {
+                            "entity": "sensor.ch_return_temperature"
+                        },
+                        {
+                            "entity": "sensor.relay_wifi"
+                        },
+                        {
+                            "entity": "sensor.epsolar_wifi"
+                        },
+                        {
+                            "entity": "sensor.solar_panel_voltage"
+                        },
+                        {
+                            "entity": "sensor.solar_panel_current"
+                        },
+                        {
+                            "entity": "sensor.solar_panel_power"
+                        },
+                        {
+                            "entity": "sensor.pump_voltage"
+                        },
+                        {
+                            "entity": "sensor.pump_current"
+                        },
+                        {
+                            "entity": "sensor.pump_power"
+                        },
+                        {
+                            "entity": "sensor.battery_voltage"
+                        },
+                        {
+                            "entity": "sensor.battery_current"
+                        },
+                        {
+                            "entity": "sensor.battery_percentage"
+                        },
+                        {
+                            "entity": "sensor.otgw_ch_control_setpoint"
+                        },
+                        {
+                            "entity": "sensor.otgw_flame_modulation"
+                        },
+                        {
+                            "entity": "sensor.otgw_ch_feed_boiler"
+                        },
+                        {
+                            "entity": "sensor.otgw_ch_return_boiler"
+                        },
+                        {
+                            "entity": "sensor.otgw_ch_water_pressure"
+                        },
+                        {
+                            "entity": "sensor.otgw_outside_temp"
+                        },
+                        {
+                            "entity": "sensor.otgw_oem_fault_code"
+                        },
+                        {
+                            "entity": "sensor.ch_feed_temperature"
+                        }
+                    ],
+                    "cards": [
+                        {
+                            "type": "thermostat",
+                            "entity": "climate.back_room"
+                        },
+                        {
+                            "type": "thermostat",
+                            "entity": "climate.front_bedroom"
+                        },
+                        {
+                            "type": "thermostat",
+                            "entity": "climate.front_room"
+                        },
+                        {
+                            "type": "thermostat",
+                            "entity": "climate.hall"
+                        },
+                        {
+                            "type": "thermostat",
+                            "entity": "climate.kitchen"
+                        },
+                        {
+                            "type": "thermostat",
+                            "entity": "climate.loft_room"
+                        },
+                        {
+                            "type": "thermostat",
+                            "entity": "climate.manorrd"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "input_boolean.auto_light",
+                                "input_boolean.auto_pump"
+                            ],
+                            "title": "Input Boolean"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "input_datetime.dhw_sensor_off",
+                                "input_datetime.dhw_sensor_on",
+                                "input_datetime.light_off",
+                                "input_datetime.light_on"
+                            ],
+                            "title": "Input Datetime"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "switch.light_switch",
+                                "switch.pump_switch",
+                                "switch.smartplug",
+                                "switch.shelly1_a4cf12f41fd4_relay",
+                                "switch.shelly1_a4cf12f46677_relay"
+                            ],
+                            "title": "Switch"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

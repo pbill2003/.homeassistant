@@ -1,0 +1,109 @@
+{
+    "version": 1,
+    "key": "lovelace.lovelace_heating",
+    "data": {
+        "config": {
+            "views": [
+                {
+                    "title": "Pond",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "custom:mini-graph-card",
+                            "entities": [
+                                {
+                                    "entity": "sensor.solar_panel_power"
+                                },
+                                {
+                                    "entity": "sensor.load_power"
+                                }
+                            ],
+                            "font_size_header": 20,
+                            "hour24": true,
+                            "hours_to_show": 12,
+                            "icon": "mdi:fan",
+                            "line_width": 1,
+                            "more_info": true,
+                            "name": "Power",
+                            "points_per_hour": 12,
+                            "refresh_interval": 0,
+                            "show": {
+                                "fill": true,
+                                "labels": true,
+                                "legend": false
+                            }
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.solar_panel_power"
+                                },
+                                {
+                                    "entity": "sensor.solar_panel_voltage"
+                                },
+                                {
+                                    "entity": "sensor.load_power"
+                                },
+                                {
+                                    "entity": "sensor.battery_current"
+                                },
+                                {
+                                    "entity": "sensor.battery_voltage"
+                                },
+                                {
+                                    "entity": "sensor.battery_percentage"
+                                }
+                            ],
+                            "title": "Summary"
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "entities",
+                                    "entities": [
+                                        {
+                                            "entity": "switch.light_switch",
+                                            "icon": "mdi:lightbulb-outline"
+                                        },
+                                        {
+                                            "entity": "switch.pump_switch",
+                                            "icon": "mdi:fan"
+                                        }
+                                    ],
+                                    "show_header_toggle": false
+                                },
+                                {
+                                    "type": "entities",
+                                    "entities": [
+                                        {
+                                            "entity": "input_datetime.light_on"
+                                        },
+                                        {
+                                            "entity": "input_datetime.light_off"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.battery_voltage"
+                                },
+                                {
+                                    "entity": "sensor.solar_panel_power"
+                                }
+                            ],
+                            "hours_to_show": 6,
+                            "refresh_interval": 0
+                        }
+                    ]
+                }
+            ],
+            "title": "Pond"
+        }
+    }
+}

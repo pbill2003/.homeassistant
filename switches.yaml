@@ -1,0 +1,44 @@
+# Switches
+
+  - platform: mqtt
+    name: "Light switch"
+    command_topic: "homie/relay-controller/light/on/set"
+    state_topic: "homie/relay-controller/light/on"
+    payload_on: "true"
+    payload_off: "false"
+    availability_topic: "homie/relay-controller/$online"
+    payload_available: "true"
+    payload_not_available: "false"
+    optimistic: false
+    retain: true
+
+    # pond
+  - platform: mqtt
+    name: "Pump switch"
+    command_topic: "homie/relay-controller/pump/on/set"
+    state_topic: "homie/relay-controller/pump/on"
+    payload_on: "true"
+    payload_off: "false"
+    availability_topic: "homie/relay-controller/$online"
+    payload_available: "true"
+    payload_not_available: "false"
+    optimistic: false
+    retain: true
+
+    # # shelly1-A4CF12F46677 
+  # - platform: mqtt
+    # name: "shelly1-A4CF12F46677 relay"
+    # command_topic: "shellies/shelly1-A4CF12F46677/relay/0/command"
+    # state_topic: "shellies/shelly1-A4CF12F46677/relay/0"
+    # payload_on: "on"
+    # payload_off: "off"
+    # retain: false
+    
+    # # shelly1-A4CF12F41FD4
+  # - platform: mqtt
+    # name: "shelly1-A4CF12F41FD4 relay"
+    # command_topic: "shellies/shelly1-A4CF12F41FD4/relay/0/command"
+    # state_topic: "shellies/shelly1-A4CF12F41FD4/relay/0"
+    # payload_on: "on"
+    # payload_off: "off"
+    # retain: false

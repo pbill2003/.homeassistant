@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "key": "lovelace_dashboards",
+    "data": {
+        "items": [
+            {
+                "require_admin": false,
+                "show_in_sidebar": true,
+                "title": "Pond",
+                "url_path": "lovelace-heating",
+                "mode": "storage",
+                "id": "lovelace_heating",
+                "icon": "mdi:duck"
+            },
+            {
+                "require_admin": false,
+                "show_in_sidebar": true,
+                "title": "Heating",
+                "url_path": "lovelace-pond",
+                "mode": "storage",
+                "id": "lovelace_pond",
+                "icon": "mdi:home-thermometer-outline"
+            },
+            {
+                "require_admin": false,
+                "show_in_sidebar": true,
+                "icon": "mdi:network-outline",
+                "title": "IoT Devices",
+                "url_path": "iot-devices",
+                "mode": "storage",
+                "id": "iot_devices"
+            }
+        ]
+    }
+}

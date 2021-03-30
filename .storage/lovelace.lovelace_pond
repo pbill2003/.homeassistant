@@ -1,0 +1,597 @@
+{
+    "version": 1,
+    "key": "lovelace.lovelace_pond",
+    "data": {
+        "config": {
+            "views": [
+                {
+                    "title": "",
+                    "path": "evohome",
+                    "icon": "mdi:radiator",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "glance",
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.dhw_sensor"
+                                },
+                                {
+                                    "entity": "sensor.dhw_sensor_time_increment",
+                                    "icon": "mdi:water-pump",
+                                    "name": "DHW Sensor timer"
+                                }
+                            ],
+                            "title": "DHW Info",
+                            "columns": 2
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "climate.front_room"
+                                },
+                                {
+                                    "entity": "climate.back_room"
+                                },
+                                {
+                                    "entity": "climate.kitchen"
+                                },
+                                {
+                                    "entity": "climate.hall"
+                                },
+                                {
+                                    "entity": "climate.loft_room"
+                                },
+                                {
+                                    "entity": "climate.front_bedroom"
+                                },
+                                {
+                                    "entity": "sensor.otgw_boiler_setpoint"
+                                }
+                            ],
+                            "title": "CH Info"
+                        }
+                    ]
+                },
+                {
+                    "title": "",
+                    "path": "temps",
+                    "icon": "mdi:thermometer-lines",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "custom:mini-graph-card",
+                            "entities": [
+                                {
+                                    "entity": "sensor.current_temperature_front_room",
+                                    "name": "Temperature",
+                                    "color": "red",
+                                    "show_fill": false
+                                },
+                                {
+                                    "entity": "sensor.setpoint_temperature_front_room",
+                                    "name": "Setpoint",
+                                    "show_fill": true
+                                }
+                            ],
+                            "hour24": true,
+                            "hours_to_show": 12,
+                            "line_width": 1,
+                            "more_info": false,
+                            "name": "Front Room",
+                            "points_per_hour": 30,
+                            "refresh_interval": 0,
+                            "lower_bound_secondary": 0,
+                            "upper_bound_secondary": 100,
+                            "show": {
+                                "labels": true
+                            }
+                        },
+                        {
+                            "type": "custom:mini-graph-card",
+                            "entities": [
+                                {
+                                    "entity": "sensor.current_temperature_kitchen",
+                                    "name": "Temperature",
+                                    "color": "red",
+                                    "show_fill": false
+                                },
+                                {
+                                    "entity": "sensor.setpoint_temperature_kitchen",
+                                    "name": "Setpoint",
+                                    "show_fill": true
+                                }
+                            ],
+                            "hour24": true,
+                            "hours_to_show": 12,
+                            "line_width": 1,
+                            "more_info": false,
+                            "name": "Kitchen",
+                            "points_per_hour": 30,
+                            "refresh_interval": 0,
+                            "lower_bound_secondary": 0,
+                            "upper_bound_secondary": 100,
+                            "show": {
+                                "labels": true
+                            }
+                        },
+                        {
+                            "type": "custom:mini-graph-card",
+                            "entities": [
+                                {
+                                    "entity": "sensor.current_temperature_back_room",
+                                    "name": "Temperature",
+                                    "color": "red",
+                                    "show_fill": false
+                                },
+                                {
+                                    "entity": "sensor.setpoint_temperature_back_room",
+                                    "name": "Setpoint",
+                                    "show_fill": true
+                                }
+                            ],
+                            "hour24": true,
+                            "hours_to_show": 12,
+                            "line_width": 1,
+                            "more_info": false,
+                            "name": "Back Room",
+                            "points_per_hour": 30,
+                            "refresh_interval": 0,
+                            "lower_bound_secondary": 0,
+                            "upper_bound_secondary": 100,
+                            "show": {
+                                "labels": true
+                            }
+                        },
+                        {
+                            "type": "custom:mini-graph-card",
+                            "entities": [
+                                {
+                                    "entity": "sensor.current_temperature_hall",
+                                    "name": "Temperature",
+                                    "color": "red",
+                                    "show_fill": false
+                                },
+                                {
+                                    "entity": "sensor.setpoint_temperature_hall",
+                                    "name": "Setpoint",
+                                    "show_fill": true
+                                }
+                            ],
+                            "hour24": true,
+                            "hours_to_show": 12,
+                            "line_width": 1,
+                            "more_info": false,
+                            "name": "Hall",
+                            "points_per_hour": 30,
+                            "refresh_interval": 0,
+                            "lower_bound_secondary": 0,
+                            "upper_bound_secondary": 100,
+                            "show": {
+                                "labels": true
+                            }
+                        },
+                        {
+                            "type": "custom:mini-graph-card",
+                            "entities": [
+                                {
+                                    "entity": "sensor.current_temperature_loft_room",
+                                    "name": "Temperature",
+                                    "color": "red",
+                                    "show_fill": false
+                                },
+                                {
+                                    "entity": "sensor.setpoint_temperature_loft_room",
+                                    "name": "Setpoint",
+                                    "show_fill": true
+                                }
+                            ],
+                            "hour24": true,
+                            "hours_to_show": 12,
+                            "line_width": 1,
+                            "more_info": false,
+                            "name": "Loft Room",
+                            "points_per_hour": 30,
+                            "refresh_interval": 0,
+                            "lower_bound_secondary": 0,
+                            "upper_bound_secondary": 100,
+                            "show": {
+                                "labels": true
+                            }
+                        },
+                        {
+                            "type": "custom:mini-graph-card",
+                            "entities": [
+                                {
+                                    "entity": "sensor.current_temperature_front_bedroom",
+                                    "name": "Temperature",
+                                    "color": "red",
+                                    "show_fill": false
+                                },
+                                {
+                                    "entity": "sensor.setpoint_temperature_front_bedroom",
+                                    "name": "Setpoint",
+                                    "show_fill": true
+                                }
+                            ],
+                            "hour24": true,
+                            "hours_to_show": 12,
+                            "line_width": 1,
+                            "more_info": false,
+                            "name": "Front bedroom",
+                            "points_per_hour": 30,
+                            "refresh_interval": 0,
+                            "lower_bound_secondary": 0,
+                            "upper_bound_secondary": 100,
+                            "show": {
+                                "labels": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "",
+                    "path": "otgw",
+                    "icon": "mdi:chart-line",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.otgw_ch_feed_boiler",
+                                    "name": "OTGW Feed Boiler"
+                                },
+                                {
+                                    "entity": "sensor.otgw_ch_return_boiler",
+                                    "name": "OTGW Return Boiler"
+                                }
+                            ],
+                            "refresh_interval": 0,
+                            "hours_to_show": 2
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.ch_feed_temperature_adjusted",
+                                    "name": "CH Feed Pipe"
+                                },
+                                {
+                                    "entity": "sensor.ch_return_temperature_adjusted",
+                                    "name": "CH Return Pipe"
+                                }
+                            ],
+                            "refresh_interval": 0,
+                            "hours_to_show": 2
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.otgw_boiler_setpoint"
+                                },
+                                {
+                                    "entity": "sensor.otgw_evohome_setpoint"
+                                }
+                            ],
+                            "hours_to_show": 2,
+                            "refresh_interval": 1
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.ch_delta_temperature",
+                                    "name": "CH Pipe delta"
+                                }
+                            ],
+                            "hours_to_show": 2,
+                            "refresh_interval": 0
+                        },
+                        {
+                            "type": "custom:mini-graph-card",
+                            "entities": [
+                                {
+                                    "entity": "sensor.clientraw_temperature",
+                                    "name": "Horfield Temp",
+                                    "color": "red",
+                                    "show_fill": false
+                                },
+                                {
+                                    "entity": "sensor.otgw_outside_temp",
+                                    "name": "OTGW Outside Temp",
+                                    "show_fill": false
+                                },
+                                {
+                                    "entity": "sensor.clientraw_humidity",
+                                    "name": "Horfield Humidity",
+                                    "color": "green",
+                                    "y_axis": "secondary"
+                                }
+                            ],
+                            "hour24": true,
+                            "hours_to_show": 12,
+                            "line_width": 1,
+                            "more_info": false,
+                            "name": "Air temperature",
+                            "points_per_hour": 4,
+                            "refresh_interval": 0,
+                            "show": {
+                                "fill": false,
+                                "labels": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "icon": "mdi:wrench",
+                    "title": "Nerd Mode",
+                    "path": "nerd",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.otgw_flame_status"
+                                },
+                                {
+                                    "entity": "sensor.otgw_flame_modulation"
+                                },
+                                {
+                                    "entity": "binary_sensor.otgw_dhw_status"
+                                },
+                                {
+                                    "entity": "binary_sensor.otgw_ch_status"
+                                },
+                                {
+                                    "entity": "sensor.otgw_ch_feed_boiler",
+                                    "name": "OTGW Feed Boiler"
+                                },
+                                {
+                                    "entity": "sensor.otgw_ch_return_boiler",
+                                    "name": "OTGW Return Boiler"
+                                },
+                                {
+                                    "entity": "sensor.ch_feed_temperature_adjusted",
+                                    "name": "CH Feed Pipe"
+                                },
+                                {
+                                    "entity": "sensor.ch_return_temperature_adjusted",
+                                    "name": "CH Return Pipe"
+                                },
+                                {
+                                    "entity": "sensor.dhw_bathroom_temperature",
+                                    "name": "DHW Bathroom Pipe"
+                                },
+                                {
+                                    "entity": "sensor.otgw_ch_water_pressure"
+                                }
+                            ],
+                            "title": "Boiler"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.otgw_evohome_setpoint"
+                                },
+                                {
+                                    "entity": "sensor.otgw_evohome_max_modulation"
+                                },
+                                {
+                                    "entity": "sensor.otgw_boiler_setpoint"
+                                },
+                                {
+                                    "entity": "sensor.otgw_boiler_max_modulation"
+                                }
+                            ],
+                            "title": "OTGW"
+                        },
+                        {
+                            "type": "custom:mini-graph-card",
+                            "entities": [
+                                {
+                                    "entity": "sensor.dhw_bathroom_temperature_gradient",
+                                    "name": "DHW Bathroom Temp Gradient",
+                                    "y_axis": "secondary",
+                                    "color": "green",
+                                    "show_fill": false
+                                },
+                                {
+                                    "entity": "sensor.dhw_bathroom_temperature",
+                                    "name": "DHW Bathroom Temp",
+                                    "color": "red",
+                                    "show_fill": true
+                                }
+                            ],
+                            "hour24": true,
+                            "hours_to_show": 9,
+                            "line_width": 1,
+                            "more_info": true,
+                            "name": "Bathroom DHW",
+                            "points_per_hour": 120,
+                            "refresh_interval": 0,
+                            "show": {
+                                "fill": true,
+                                "labels": false
+                            }
+                        },
+                        {
+                            "type": "glance",
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.dhw_sensor"
+                                },
+                                {
+                                    "entity": "binary_sensor.dhw_bathroom_temperature_trend"
+                                },
+                                {
+                                    "entity": "switch.shelly1_a4cf12f41fd4"
+                                }
+                            ],
+                            "title": "DHW Info",
+                            "columns": 3
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.otgw_flame_modulation"
+                                }
+                            ],
+                            "hours_to_show": 2,
+                            "refresh_interval": 0
+                        }
+                    ]
+                },
+                {
+                    "title": "Nerd Mode",
+                    "path": "max-nerd",
+                    "panel": true,
+                    "icon": "mdi:tools",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "custom:layout-card",
+                            "layout": "auto",
+                            "column_width": 1000,
+                            "cards": [
+                                {
+                                    "type": "custom:apexcharts-card",
+                                    "graph_span": "2h",
+                                    "apex_config": {
+                                        "xaxis": {
+                                            "labels": {
+                                                "format": "HH:mm"
+                                            }
+                                        },
+                                        "yaxis": {
+                                            "decimalsInFloat": 0,
+                                            "tickAmount": 8,
+                                            "min": 0,
+                                            "max": 80
+                                        },
+                                        "stroke": {
+                                            "width": 2,
+                                            "curve": "stepline"
+                                        },
+                                        "markers": {
+                                            "size": [
+                                                0,
+                                                0,
+                                                2
+                                            ]
+                                        },
+                                        "legend": {
+                                            "show": true,
+                                            "position": "top"
+                                        },
+                                        "chart": {
+                                            "zoom": {
+                                                "enabled": true,
+                                                "type": "x"
+                                            }
+                                        }
+                                    },
+                                    "header": {
+                                        "show": true,
+                                        "title": "OTGW boiler parms",
+                                        "show_states": true
+                                    },
+                                    "series": [
+                                        {
+                                            "entity": "sensor.otgw_ch_feed_boiler",
+                                            "color": "crimson"
+                                        },
+                                        {
+                                            "entity": "sensor.otgw_ch_return_boiler",
+                                            "color": "green"
+                                        },
+                                        {
+                                            "entity": "sensor.otgw_boiler_setpoint",
+                                            "name": "OTGW Setpoint",
+                                            "color": "purple"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.otgw_ch_status",
+                                            "color": "red",
+                                            "transform": "return x === 'on' ? 20 : 15"
+                                        },
+                                        {
+                                            "entity": "binary_sensor.otgw_dhw_status",
+                                            "color": "blue",
+                                            "transform": "return x === 'on' ? 15 : 10"
+                                        },
+                                        {
+                                            "entity": "sensor.otgw_flame_modulation",
+                                            "color": "orange"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Reset",
+                    "path": "reset",
+                    "icon": "mdi:lock-reset",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "button",
+                                    "tap_action": {
+                                        "action": "call-service",
+                                        "service": "script.evohome_custom"
+                                    },
+                                    "entity": "climate.manorrd",
+                                    "icon": "mdi:radiator",
+                                    "icon_height": "30px",
+                                    "name": "Evohome Heating Off",
+                                    "hold_action": {
+                                        "action": "none"
+                                    }
+                                },
+                                {
+                                    "type": "button",
+                                    "tap_action": {
+                                        "action": "call-service",
+                                        "service": "script.evohome_followschedule"
+                                    },
+                                    "entity": "climate.manorrd",
+                                    "icon": "mdi:radiator",
+                                    "name": "Evohome Follow Schedule",
+                                    "icon_height": "30px",
+                                    "hold_action": {
+                                        "action": "none"
+                                    },
+                                    "show_state": false
+                                },
+                                {
+                                    "type": "button",
+                                    "tap_action": {
+                                        "action": "call-service",
+                                        "service": "script.otgw_reset"
+                                    },
+                                    "entity": "climate.manorrd",
+                                    "name": "OTGW Reset to Evohome",
+                                    "icon_height": "30px",
+                                    "hold_action": {
+                                        "action": "none"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "title": "Heating"
+        }
+    }
+}

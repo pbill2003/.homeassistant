@@ -1,0 +1,18 @@
+- platform: template
+  sensors:
+    dhw_sensor:
+      friendly_name: 'DHW Sensor'
+      value_template: >-
+        {{ is_state('binary_sensor.otgw_flame_status', 'on')
+        and is_state('binary_sensor.otgw_dhw_status', 'on') }}
+
+- platform: trend
+  sensors:
+    dhw_bathroom_temperature_trend:
+      friendly_name: 'DHW Bathroom Temperature Trend'
+      entity_id: sensor.dhw_bathroom_temperature
+      min_gradient: 0.1
+      max_samples: 2
+
+
+

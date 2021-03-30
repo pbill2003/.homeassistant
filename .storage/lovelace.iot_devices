@@ -1,0 +1,61 @@
+{
+    "version": 1,
+    "key": "lovelace.iot_devices",
+    "data": {
+        "config": {
+            "views": [
+                {
+                    "icon": "mdi:wifi",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "switch.shelly1_a4cf12f46677",
+                                    "icon": "mdi:fan",
+                                    "name": "Shelly1 Underfloor fan"
+                                },
+                                {
+                                    "entity": "switch.shelly1_a4cf12f41fd4",
+                                    "icon": "mdi:fan",
+                                    "name": "Shelly1 Bathroom fan"
+                                },
+                                {
+                                    "entity": "switch.smartplug",
+                                    "name": "Kasa SmartPlug"
+                                }
+                            ],
+                            "show_header_toggle": false
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.epsolar_wifi"
+                                },
+                                {
+                                    "entity": "sensor.relay_wifi"
+                                }
+                            ],
+                            "hours_to_show": 12,
+                            "refresh_interval": 0,
+                            "title": "ESP8266"
+                        },
+                        {
+                            "type": "map",
+                            "entities": [
+                                {
+                                    "entity": "device_tracker.iphonexr"
+                                }
+                            ],
+                            "hours_to_show": 24,
+                            "dark_mode": false
+                        }
+                    ]
+                }
+            ],
+            "title": "IoT Devices"
+        }
+    }
+}

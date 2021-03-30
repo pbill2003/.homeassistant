@@ -1,0 +1,25 @@
+{
+    "version": 2,
+    "key": "person",
+    "data": {
+        "items": [
+            {
+                "name": "Pete",
+                "user_id": "ec3b75e2f5c74ef28663068cf288842d",
+                "device_trackers": [
+                    "device_tracker.iphonexr",
+                    "device_tracker.ipad"
+                ],
+                "id": "pete",
+                "picture": null
+            },
+            {
+                "name": "Kath",
+                "device_trackers": [],
+                "user_id": "49ee1837d30b404ab5c06a055b8b698a",
+                "picture": null,
+                "id": "kath"
+            }
+        ]
+    }
+}
