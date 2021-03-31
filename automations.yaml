@@ -56,6 +56,7 @@
     entity_id: binary_sensor.dhw_bathroom_temperature_trend
     above: '0.1'
     attribute: gradient
+    for: 00:00:10
   condition: []
   action:
   - service: switch.turn_on

@@ -408,7 +408,7 @@
                                 }
                             ],
                             "hour24": true,
-                            "hours_to_show": 9,
+                            "hours_to_show": 1,
                             "line_width": 1,
                             "more_info": true,
                             "name": "Bathroom DHW",
