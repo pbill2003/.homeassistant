@@ -300,11 +300,6 @@
                                     "show_fill": false
                                 },
                                 {
-                                    "entity": "sensor.otgw_outside_temp",
-                                    "name": "OTGW Outside Temp",
-                                    "show_fill": false
-                                },
-                                {
                                     "entity": "sensor.clientraw_humidity",
                                     "name": "Horfield Humidity",
                                     "color": "green",
@@ -408,7 +403,7 @@
                                 }
                             ],
                             "hour24": true,
-                            "hours_to_show": 1,
+                            "hours_to_show": 3,
                             "line_width": 1,
                             "more_info": true,
                             "name": "Bathroom DHW",

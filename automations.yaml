@@ -18,7 +18,7 @@
   - platform: numeric_state
     entity_id: sensor.battery_voltage
     for: 00:04:00
-    above: '13.6'
+    above: '13.4'
   condition:
   - condition: numeric_state
     entity_id: sensor.solar_panel_power
@@ -57,7 +57,10 @@
     above: '0.1'
     attribute: gradient
     for: 00:00:10
-  condition: []
+  condition:
+  - condition: time
+    after: 06:30
+    before: '23:59'
   action:
   - service: switch.turn_on
     data: {}
@@ -400,4 +403,15 @@
       message: 'Setpoint is {{ states(''sensor.otgw_boiler_setpoint'') }} at {{ states.sensor.time.state
         }} '
       title: Boiler setpoint change
+  mode: single
+- id: '1618169242161'
+  alias: Run JB’s gymscript
+  description: ''
+  trigger:
+  - platform: time_pattern
+    minutes: /55
+  condition: []
+  action:
+  - service: shell_command.run_gymscript
+    data: {}
   mode: single
