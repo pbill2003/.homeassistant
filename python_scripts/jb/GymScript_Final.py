@@ -54,6 +54,8 @@ def scrape_input(html):
         for x, y in zip(s2, s3):
             timeslot = x.text.strip()
             spaces = int("".join(z for z in y.text if z.isdigit()))
+            if spaces == 0:
+                continue
             datetime = timeslot + todays_date
             print(timeslot, spaces)
 

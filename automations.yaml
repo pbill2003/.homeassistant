@@ -71,15 +71,15 @@
   description: Includes variable delay
   trigger:
   - platform: state
-    entity_id: binary_sensor.dhw_sensor
     from: 'on'
     to: 'off'
+    entity_id: binary_sensor.dhw_sensor
   condition: []
   action:
   - delay:
       hours: 0
       minutes: 0
-      seconds: 5
+      seconds: 10
       milliseconds: 0
   - delay: '{{  ''00:{}''.format(states(''sensor.dhw_sensor_time_increment'')[-5:])
       }}'
@@ -409,7 +409,7 @@
   description: ''
   trigger:
   - platform: time_pattern
-    minutes: /55
+    minutes: '55'
   condition: []
   action:
   - service: shell_command.run_gymscript

@@ -88,21 +88,6 @@
                             "entity": "sensor.clientraw_humidity"
                         },
                         {
-                            "entity": "sensor.smartplug_amps"
-                        },
-                        {
-                            "entity": "sensor.smartplug_watts"
-                        },
-                        {
-                            "entity": "sensor.smartplug_total_kwh"
-                        },
-                        {
-                            "entity": "sensor.smartplug_volts"
-                        },
-                        {
-                            "entity": "sensor.smartplug_today_kwh"
-                        },
-                        {
                             "entity": "sensor.ch_return_temperature"
                         },
                         {
@@ -121,13 +106,13 @@
                             "entity": "sensor.solar_panel_power"
                         },
                         {
-                            "entity": "sensor.pump_voltage"
+                            "entity": "sensor.load_voltage"
                         },
                         {
-                            "entity": "sensor.pump_current"
+                            "entity": "sensor.load_current"
                         },
                         {
-                            "entity": "sensor.pump_power"
+                            "entity": "sensor.load_power"
                         },
                         {
                             "entity": "sensor.battery_voltage"
@@ -137,9 +122,6 @@
                         },
                         {
                             "entity": "sensor.battery_percentage"
-                        },
-                        {
-                            "entity": "sensor.otgw_ch_control_setpoint"
                         },
                         {
                             "entity": "sensor.otgw_flame_modulation"
@@ -152,12 +134,6 @@
                         },
                         {
                             "entity": "sensor.otgw_ch_water_pressure"
-                        },
-                        {
-                            "entity": "sensor.otgw_outside_temp"
-                        },
-                        {
-                            "entity": "sensor.otgw_oem_fault_code"
                         },
                         {
                             "entity": "sensor.ch_feed_temperature"
@@ -187,39 +163,6 @@
                         {
                             "type": "thermostat",
                             "entity": "climate.loft_room"
-                        },
-                        {
-                            "type": "thermostat",
-                            "entity": "climate.manorrd"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                "input_boolean.auto_light",
-                                "input_boolean.auto_pump"
-                            ],
-                            "title": "Input Boolean"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                "input_datetime.dhw_sensor_off",
-                                "input_datetime.dhw_sensor_on",
-                                "input_datetime.light_off",
-                                "input_datetime.light_on"
-                            ],
-                            "title": "Input Datetime"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                "switch.light_switch",
-                                "switch.pump_switch",
-                                "switch.smartplug",
-                                "switch.shelly1_a4cf12f41fd4_relay",
-                                "switch.shelly1_a4cf12f46677_relay"
-                            ],
-                            "title": "Switch"
                         }
                     ]
                 }
