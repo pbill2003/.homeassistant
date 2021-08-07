@@ -1,7 +1,11 @@
 /home-assistant.log
 /home-assistant_v2.db
+/home-assistant_v2.db-shm
+/home-assistant_v2.db-wal
 /.HA_VERSION
 /configuration.yaml
+
+python_scripts/jb/gym1.db
 
 \tts
 \deps

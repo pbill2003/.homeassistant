@@ -19,10 +19,14 @@
     entity_id: sensor.battery_voltage
     for: 00:04:00
     above: '13.4'
+  - platform: numeric_state
+    entity_id: sensor.solar_panel_power
+    above: '4.0'
+    for: 00:04:00
   condition:
   - condition: numeric_state
     entity_id: sensor.solar_panel_power
-    above: '4'
+    above: '1'
   action:
   - service: input_boolean.turn_on
     data: {}
@@ -38,7 +42,7 @@
   - platform: numeric_state
     entity_id: sensor.solar_panel_power
     for: 00:10:00
-    below: '5'
+    below: '4'
   condition: []
   action:
   - service: input_boolean.turn_off
@@ -65,7 +69,15 @@
   - service: switch.turn_on
     data: {}
     entity_id: switch.shelly1_a4cf12f41fd4
-  mode: single
+  - delay:
+      hours: 0
+      minutes: 30
+      seconds: 0
+      milliseconds: 0
+  - service: switch.turn_off
+    target:
+      device_id: 2e66041bfe7cb791813ea1470912d4e9
+  mode: restart
 - id: '1601121557392'
   alias: Bathroom Fan Off Long
   description: Includes variable delay
@@ -83,6 +95,14 @@
       milliseconds: 0
   - delay: '{{  ''00:{}''.format(states(''sensor.dhw_sensor_time_increment'')[-5:])
       }}'
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.shelly1_a4cf12f41fd4
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
   - service: switch.turn_off
     data: {}
     entity_id: switch.shelly1_a4cf12f41fd4
@@ -367,7 +387,15 @@
   - service: switch.turn_on
     data: {}
     entity_id: switch.shelly1_a4cf12f41fd4
-  mode: single
+  - delay:
+      hours: 0
+      minutes: 30
+      seconds: 0
+      milliseconds: 0
+  - service: switch.turn_off
+    target:
+      device_id: 2e66041bfe7cb791813ea1470912d4e9
+  mode: restart
 - id: '1611692669248'
   alias: OTGW Notify Evohome Setpoint
   description: ''
