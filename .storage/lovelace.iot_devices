@@ -12,14 +12,18 @@
                             "type": "entities",
                             "entities": [
                                 {
+                                    "entity": "switch.shelly1_a4cf12f41fd4",
+                                    "name": "Shelly1 String lights"
+                                },
+                                {
+                                    "entity": "switch.shellyswitch25_e8db84a1fff1_channel_1",
+                                    "icon": "mdi:fan",
+                                    "name": "Shelly25 Bathroom fan"
+                                },
+                                {
                                     "entity": "switch.shelly1_a4cf12f46677",
                                     "icon": "mdi:fan",
                                     "name": "Shelly1 Underfloor fan"
-                                },
-                                {
-                                    "entity": "switch.shelly1_a4cf12f41fd4",
-                                    "icon": "mdi:fan",
-                                    "name": "Shelly1 Bathroom fan"
                                 },
                                 {
                                     "entity": "switch.smartplug",
@@ -36,6 +40,12 @@
                                 },
                                 {
                                     "entity": "sensor.relay_wifi"
+                                },
+                                {
+                                    "entity": "sensor.shellyswitch25_e8db84a1fff1_rssi"
+                                },
+                                {
+                                    "entity": "sensor.shelly1_a4cf12f41fd4_rssi"
                                 }
                             ],
                             "hours_to_show": 12,
@@ -51,6 +61,32 @@
                             ],
                             "hours_to_show": 24,
                             "dark_mode": false
+                        }
+                    ]
+                },
+                {
+                    "title": "",
+                    "path": "schedule",
+                    "icon": "mdi:clock",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "custom:scheduler-card",
+                            "include": [
+                                "input_boolean.auto_light",
+                                "switch.light_switch",
+                                "switch.shelly1_a4cf12f41fd4"
+                            ],
+                            "title": "Garden light schedule",
+                            "discover_existing": false
+                        },
+                        {
+                            "type": "custom:scheduler-card",
+                            "discover_existing": false,
+                            "include": [
+                                "switch.shelly1_a4cf12f46677"
+                            ],
+                            "title": "Underfloor fan schedule"
                         }
                     ]
                 }

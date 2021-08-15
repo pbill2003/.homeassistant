@@ -6,8 +6,35 @@
             "views": [
                 {
                     "title": "Pond",
+                    "icon": "mdi:duck",
                     "badges": [],
                     "cards": [
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "entities",
+                                    "entities": [
+                                        {
+                                            "entity": "switch.shelly1_a4cf12f41fd4",
+                                            "icon": "mdi:string-lights",
+                                            "name": "String lights"
+                                        },
+                                        {
+                                            "entity": "switch.light_switch",
+                                            "icon": "mdi:lightbulb-outline",
+                                            "name": "Garden lights"
+                                        },
+                                        {
+                                            "entity": "switch.pump_switch",
+                                            "icon": "mdi:fan",
+                                            "name": "Pond pump"
+                                        }
+                                    ],
+                                    "show_header_toggle": false
+                                }
+                            ]
+                        },
                         {
                             "type": "custom:mini-graph-card",
                             "entities": [
@@ -58,36 +85,6 @@
                             "title": "Summary"
                         },
                         {
-                            "type": "vertical-stack",
-                            "cards": [
-                                {
-                                    "type": "entities",
-                                    "entities": [
-                                        {
-                                            "entity": "switch.light_switch",
-                                            "icon": "mdi:lightbulb-outline"
-                                        },
-                                        {
-                                            "entity": "switch.pump_switch",
-                                            "icon": "mdi:fan"
-                                        }
-                                    ],
-                                    "show_header_toggle": false
-                                },
-                                {
-                                    "type": "entities",
-                                    "entities": [
-                                        {
-                                            "entity": "input_datetime.light_on"
-                                        },
-                                        {
-                                            "entity": "input_datetime.light_off"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
                             "type": "history-graph",
                             "entities": [
                                 {
@@ -103,7 +100,7 @@
                     ]
                 }
             ],
-            "title": "Pond"
+            "title": ""
         }
     }
 }

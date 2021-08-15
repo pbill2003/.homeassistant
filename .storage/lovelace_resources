@@ -17,6 +17,11 @@
                 "url": "/local/layout-card.js",
                 "type": "module",
                 "id": "81092ffd84fc4ef1a40cf0995935d46e"
+            },
+            {
+                "url": "/hacsfiles/scheduler-card/scheduler-card.js?hacstag=286270157214",
+                "type": "module",
+                "id": "0db71da0bebd4b23aa5a447d2792b49b"
             }
         ]
     }

@@ -34,7 +34,7 @@
   - service: switch.turn_on
     data: {}
     entity_id: switch.pump_switch
-  mode: single
+  mode: restart
 - id: '1601121355747'
   alias: Pump Solar Auto Off
   description: ''
@@ -51,7 +51,7 @@
   - service: switch.turn_off
     data: {}
     entity_id: switch.pump_switch
-  mode: single
+  mode: restart
 - id: '1601121501673'
   alias: Bathroom fan On
   description: ''
@@ -68,7 +68,9 @@
   action:
   - service: switch.turn_on
     data: {}
-    entity_id: switch.shelly1_a4cf12f41fd4
+    target:
+      entity_id:
+      - switch.shellyswitch25_e8db84a1fff1_channel_1
   - delay:
       hours: 0
       minutes: 30
@@ -76,7 +78,8 @@
       milliseconds: 0
   - service: switch.turn_off
     target:
-      device_id: 2e66041bfe7cb791813ea1470912d4e9
+      entity_id:
+      - switch.shellyswitch25_e8db84a1fff1_channel_1
   mode: restart
 - id: '1601121557392'
   alias: Bathroom Fan Off Long
@@ -97,7 +100,9 @@
       }}'
   - service: switch.turn_off
     data: {}
-    entity_id: switch.shelly1_a4cf12f41fd4
+    target:
+      entity_id:
+      - switch.shellyswitch25_e8db84a1fff1_channel_1
   - delay:
       hours: 0
       minutes: 0
@@ -105,7 +110,9 @@
       milliseconds: 0
   - service: switch.turn_off
     data: {}
-    entity_id: switch.shelly1_a4cf12f41fd4
+    target:
+      entity_id:
+      - switch.shellyswitch25_e8db84a1fff1_channel_1
   mode: restart
 - id: '1601121864100'
   alias: DHW Sensor increment time
@@ -176,19 +183,28 @@
     entity_id: switch.pump_switch
   - service: switch.turn_off
     data: {}
-    entity_id: switch.light_switch
   - service: switch.turn_off
     data: {}
-    entity_id: switch.smartplug
+    target:
+      entity_id:
+      - switch.smartplug
   - service: switch.turn_off
     data: {}
-    entity_id: switch.shelly1_a4cf12f41fd4
+    target:
+      entity_id:
+      - switch.shelly1_a4cf12f41fd4
   - service: switch.turn_off
     data: {}
-    entity_id: switch.shelly1_a4cf12f46677
+    target:
+      entity_id:
+      - switch.shelly1_a4cf12f46677
+  - service: switch.turn_off
+    target:
+      entity_id:
+      - switch.shellyswitch25_e8db84a1fff1_channel_1
   mode: single
 - id: '1601150705622'
-  alias: Underfloor fan On
+  alias: Underfloor fan
   description: ''
   trigger:
   - platform: time
@@ -200,20 +216,19 @@
   action:
   - service: switch.turn_on
     data: {}
-    entity_id: switch.shelly1_a4cf12f46677
-  mode: single
-- id: '1601150755383'
-  alias: Underfloor fan Off
-  description: ''
-  trigger:
-  - platform: time
-    at: '17:00'
-  condition: []
-  action:
+    target:
+      entity_id:
+      - switch.shelly1_a4cf12f46677
+  - delay:
+      hours: 1
+      minutes: 0
+      seconds: 0
+      milliseconds: 0
   - service: switch.turn_off
-    data: {}
-    entity_id: switch.shelly1_a4cf12f46677
-  mode: single
+    target:
+      entity_id:
+      - switch.shelly1_a4cf12f46677
+  mode: restart
 - id: '1601151093811'
   alias: Pump Auto off
   description: 60 mins limit after manual switch on
@@ -386,7 +401,9 @@
   action:
   - service: switch.turn_on
     data: {}
-    entity_id: switch.shelly1_a4cf12f41fd4
+    target:
+      entity_id:
+      - switch.shellyswitch25_e8db84a1fff1_channel_1
   - delay:
       hours: 0
       minutes: 30
@@ -394,7 +411,8 @@
       milliseconds: 0
   - service: switch.turn_off
     target:
-      device_id: 2e66041bfe7cb791813ea1470912d4e9
+      entity_id:
+      - switch.shellyswitch25_e8db84a1fff1_channel_1
   mode: restart
 - id: '1611692669248'
   alias: OTGW Notify Evohome Setpoint
