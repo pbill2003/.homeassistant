@@ -12,7 +12,7 @@
         "description": "\ud83d\udcc8 A Lovelace card to display advanced graphs and charts based on ApexChartsJS for Home Assistant",
         "domain": "",
         "domains": [],
-        "downloads": 6486,
+        "downloads": 6497,
         "etag_repository": "W/\"c3fe0c0d8b898da82595933338f210d5dd371e2c16d0f851ae2a28842f7a7359\"",
         "file_name": "apexcharts-card.js",
         "filename": "",

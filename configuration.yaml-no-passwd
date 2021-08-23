@@ -77,14 +77,14 @@ input_boolean:
     initial: off
 
 input_datetime:
-  light_on:
-    name: 'Light on time'
-    has_date: false
-    has_time: true
-  light_off:
-    name: 'Light off time'
-    has_date: false
-    has_time: true
+#  light_on:
+#    name: 'Light on time'
+#    has_date: false
+#    has_time: true
+#  light_off:
+#    name: 'Light off time'
+#    has_date: false
+#    has_time: true
   dhw_sensor_on:
     name: 'DHW sensor on'
     has_date: true

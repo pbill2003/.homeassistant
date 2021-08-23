@@ -202,32 +202,6 @@
       entity_id:
       - switch.shellyswitch25_e8db84a1fff1_channel_1
   mode: single
-- id: '1601150705622'
-  alias: Underfloor fan
-  description: ''
-  trigger:
-  - platform: time
-    at: '15:00'
-  condition:
-  - condition: numeric_state
-    entity_id: sensor.clientraw_humidity
-    below: '55'
-  action:
-  - service: switch.turn_on
-    data: {}
-    target:
-      entity_id:
-      - switch.shelly1_a4cf12f46677
-  - delay:
-      hours: 1
-      minutes: 0
-      seconds: 0
-      milliseconds: 0
-  - service: switch.turn_off
-    target:
-      entity_id:
-      - switch.shelly1_a4cf12f46677
-  mode: restart
 - id: '1601151093811'
   alias: Pump Auto off
   description: 60 mins limit after manual switch on
@@ -272,40 +246,6 @@
   action:
   - service: shell_command.run_ad5252
     data: {}
-  mode: single
-- id: '1601151602680'
-  alias: Light Schedule On
-  description: ''
-  trigger:
-  - platform: template
-    value_template: '{{ states.sensor.time.state == states.input_datetime.light_on.state[0:5]
-      }}'
-  condition:
-  - condition: numeric_state
-    entity_id: sensor.battery_percentage
-    above: '60'
-  action:
-  - service: switch.turn_on
-    data: {}
-    entity_id: switch.light_switch
-  - service: input_boolean.turn_on
-    data: {}
-    entity_id: input_boolean.auto_light
-  mode: single
-- id: '1601151798384'
-  alias: Light Schedule Off
-  description: ''
-  trigger:
-  - platform: template
-    value_template: '{{ states.sensor.time.state == states.input_datetime.light_off.state[0:5]}}'
-  condition: []
-  action:
-  - service: switch.turn_off
-    data: {}
-    entity_id: switch.light_switch
-  - service: input_boolean.turn_off
-    data: {}
-    entity_id: input_boolean.auto_light
   mode: single
 - id: '1604180361250'
   alias: Coming home coffee
@@ -448,15 +388,4 @@
       message: 'Setpoint is {{ states(''sensor.otgw_boiler_setpoint'') }} at {{ states.sensor.time.state
         }} '
       title: Boiler setpoint change
-  mode: single
-- id: '1618169242161'
-  alias: Run JB’s gymscript
-  description: ''
-  trigger:
-  - platform: time_pattern
-    minutes: '55'
-  condition: []
-  action:
-  - service: shell_command.run_gymscript
-    data: {}
   mode: single

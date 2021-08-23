@@ -12,7 +12,7 @@
         "description": "HA Lovelace card for control of scheduler entities",
         "domain": "",
         "domains": [],
-        "downloads": 6502,
+        "downloads": 6505,
         "etag_repository": "W/\"9b32922ecb189e95b0755b17614d7f3b5f4542c02e0e5723c61f088c4b70ba06\"",
         "file_name": "scheduler-card.js",
         "filename": "",
