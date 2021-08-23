@@ -5,7 +5,7 @@
         "config": {
             "views": [
                 {
-                    "icon": "mdi:wifi",
+                    "icon": "mdi:network-outline",
                     "badges": [],
                     "cards": [
                         {
@@ -13,17 +13,18 @@
                             "entities": [
                                 {
                                     "entity": "switch.shelly1_a4cf12f41fd4",
-                                    "name": "Shelly1 String lights"
+                                    "name": "String lights",
+                                    "icon": "mdi:string-lights"
                                 },
                                 {
                                     "entity": "switch.shellyswitch25_e8db84a1fff1_channel_1",
                                     "icon": "mdi:fan",
-                                    "name": "Shelly25 Bathroom fan"
+                                    "name": "Bathroom fan"
                                 },
                                 {
                                     "entity": "switch.shelly1_a4cf12f46677",
                                     "icon": "mdi:fan",
-                                    "name": "Shelly1 Underfloor fan"
+                                    "name": "Underfloor fan"
                                 },
                                 {
                                     "entity": "switch.smartplug",
@@ -51,33 +52,29 @@
                             "hours_to_show": 12,
                             "refresh_interval": 0,
                             "title": "ESP8266"
-                        },
-                        {
-                            "type": "map",
-                            "entities": [
-                                {
-                                    "entity": "device_tracker.iphonexr"
-                                }
-                            ],
-                            "hours_to_show": 24,
-                            "dark_mode": false
                         }
                     ]
                 },
                 {
                     "title": "",
                     "path": "schedule",
-                    "icon": "mdi:clock",
+                    "icon": "mdi:clock-outline",
                     "badges": [],
                     "cards": [
                         {
                             "type": "custom:scheduler-card",
-                            "include": [
-                                "input_boolean.auto_light",
-                                "switch.light_switch",
-                                "switch.shelly1_a4cf12f41fd4"
-                            ],
                             "title": "Garden light schedule",
+                            "groups": [
+                                {
+                                    "name": "Lights",
+                                    "icon": "mdi:garden",
+                                    "include": [
+                                        "switch.light_switch",
+                                        "switch.shelly1_a4cf12f41fd4",
+                                        "input_boolean.auto_light"
+                                    ]
+                                }
+                            ],
                             "discover_existing": false
                         },
                         {
@@ -87,6 +84,14 @@
                                 "switch.shelly1_a4cf12f46677"
                             ],
                             "title": "Underfloor fan schedule"
+                        },
+                        {
+                            "type": "custom:scheduler-card",
+                            "title": "Wake media server schedule",
+                            "discover_existing": false,
+                            "include": [
+                                "script.wake_media_server"
+                            ]
                         }
                     ]
                 }

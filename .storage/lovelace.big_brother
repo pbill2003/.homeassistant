@@ -1,0 +1,37 @@
+{
+    "version": 1,
+    "key": "lovelace.big_brother",
+    "data": {
+        "config": {
+            "views": [
+                {
+                    "title": "Map",
+                    "icon": "mdi:map-marker-outline",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "map",
+                            "entities": [
+                                {
+                                    "entity": "device_tracker.iphonexr"
+                                },
+                                {
+                                    "entity": "device_tracker.ipad"
+                                },
+                                {
+                                    "entity": "device_tracker.s58pro"
+                                },
+                                {
+                                    "entity": "zone.cycling_home"
+                                }
+                            ],
+                            "default_zoom": 14,
+                            "hours_to_show": 24
+                        }
+                    ]
+                }
+            ],
+            "title": "Map"
+        }
+    }
+}

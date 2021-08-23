@@ -113,7 +113,8 @@
     target:
       entity_id:
       - switch.shellyswitch25_e8db84a1fff1_channel_1
-  mode: restart
+  mode: parallel
+  max: 10
 - id: '1601121864100'
   alias: DHW Sensor increment time
   description: ''
@@ -181,8 +182,6 @@
   - service: switch.turn_off
     data: {}
     entity_id: switch.pump_switch
-  - service: switch.turn_off
-    data: {}
   - service: switch.turn_off
     data: {}
     target:

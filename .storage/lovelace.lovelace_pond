@@ -11,21 +11,6 @@
                     "badges": [],
                     "cards": [
                         {
-                            "type": "glance",
-                            "entities": [
-                                {
-                                    "entity": "binary_sensor.dhw_sensor"
-                                },
-                                {
-                                    "entity": "sensor.dhw_sensor_time_increment",
-                                    "icon": "mdi:water-pump",
-                                    "name": "DHW Sensor timer"
-                                }
-                            ],
-                            "title": "DHW Info",
-                            "columns": 2
-                        },
-                        {
                             "type": "entities",
                             "entities": [
                                 {
@@ -327,6 +312,27 @@
                     "badges": [],
                     "cards": [
                         {
+                            "type": "glance",
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.dhw_sensor"
+                                },
+                                {
+                                    "entity": "sensor.dhw_sensor_time_increment",
+                                    "icon": "mdi:water-pump",
+                                    "name": "DHW Sensor timer"
+                                },
+                                {
+                                    "entity": "switch.shellyswitch25_e8db84a1fff1_channel_1",
+                                    "icon": "mdi:fan",
+                                    "name": "Bathroom fan"
+                                }
+                            ],
+                            "title": "DHW Info",
+                            "columns": 3,
+                            "state_color": true
+                        },
+                        {
                             "type": "entities",
                             "entities": [
                                 {
@@ -365,25 +371,8 @@
                                     "entity": "sensor.otgw_ch_water_pressure"
                                 }
                             ],
-                            "title": "Boiler"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "sensor.otgw_evohome_setpoint"
-                                },
-                                {
-                                    "entity": "sensor.otgw_evohome_max_modulation"
-                                },
-                                {
-                                    "entity": "sensor.otgw_boiler_setpoint"
-                                },
-                                {
-                                    "entity": "sensor.otgw_boiler_max_modulation"
-                                }
-                            ],
-                            "title": "OTGW"
+                            "title": "Boiler",
+                            "state_color": true
                         },
                         {
                             "type": "custom:mini-graph-card",
@@ -406,7 +395,7 @@
                             "hours_to_show": 3,
                             "line_width": 1,
                             "more_info": true,
-                            "name": "Bathroom DHW",
+                            "name": "DHW Bathroom",
                             "points_per_hour": 120,
                             "refresh_interval": 0,
                             "show": {
@@ -415,30 +404,32 @@
                             }
                         },
                         {
-                            "type": "glance",
-                            "entities": [
-                                {
-                                    "entity": "binary_sensor.dhw_sensor"
-                                },
-                                {
-                                    "entity": "binary_sensor.dhw_bathroom_temperature_trend"
-                                },
-                                {
-                                    "entity": "switch.shelly1_a4cf12f41fd4"
-                                }
-                            ],
-                            "title": "DHW Info",
-                            "columns": 3
-                        },
-                        {
                             "type": "history-graph",
                             "entities": [
                                 {
                                     "entity": "sensor.otgw_flame_modulation"
                                 }
                             ],
-                            "hours_to_show": 2,
+                            "hours_to_show": 3,
                             "refresh_interval": 0
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.otgw_evohome_setpoint"
+                                },
+                                {
+                                    "entity": "sensor.otgw_evohome_max_modulation"
+                                },
+                                {
+                                    "entity": "sensor.otgw_boiler_setpoint"
+                                },
+                                {
+                                    "entity": "sensor.otgw_boiler_max_modulation"
+                                }
+                            ],
+                            "title": "OTGW"
                         }
                     ]
                 },

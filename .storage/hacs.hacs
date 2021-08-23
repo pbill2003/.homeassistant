@@ -4,6 +4,10 @@
     "data": {
         "view": "Grid",
         "compact": false,
-        "onboarding_done": false
+        "onboarding_done": false,
+        "archived_repositories": [],
+        "renamed_repositories": {
+            "xMrVizzy/Philips-AirPurifier": "kraineff/philips-airpurifier"
+        }
     }
 }

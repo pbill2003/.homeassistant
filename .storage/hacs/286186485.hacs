@@ -1,0 +1,67 @@
+{
+    "version": "6",
+    "key": "hacs/286186485.hacs",
+    "data": {
+        "archived": false,
+        "authors": [
+            "@nielsfaber"
+        ],
+        "category": "integration",
+        "content_in_root": false,
+        "country": [],
+        "config_flow": true,
+        "default_branch": "main",
+        "description": "Custom component for HA that enables the creation of scheduler entities",
+        "domain": "scheduler",
+        "domains": [
+            "switch"
+        ],
+        "downloads": 76,
+        "etag_repository": "W/\"fbaac573d3be8530cffd9fe6ee84f04e947abcc3cbcd45cc1f2e352395d67425\"",
+        "file_name": "",
+        "filename": "",
+        "first_install": false,
+        "fork": false,
+        "full_name": "nielsfaber/scheduler-component",
+        "hacs": null,
+        "hide": false,
+        "hide_default_branch": false,
+        "homeassistant": null,
+        "id": "286186485",
+        "iot_class": [
+            "Local Push"
+        ],
+        "installed": true,
+        "installed_commit": "bace777",
+        "installed_version": "v3.1.3",
+        "open_issues": 3,
+        "last_commit": "fc0bbfe",
+        "last_version": "v3.1.3",
+        "last_updated": "2021-08-23T18:19:55Z",
+        "manifest_name": "Scheduler integration",
+        "new": false,
+        "persistent_directory": null,
+        "pushed_at": "2021-08-23T18:19:55",
+        "releases": true,
+        "render_readme": "true",
+        "published_tags": [
+            "v3.1.3",
+            "v.3.1.2",
+            "v3.1.1",
+            "v3.1.0",
+            "v3.0.4"
+        ],
+        "selected_tag": null,
+        "show_beta": false,
+        "stargazers_count": 142,
+        "topics": [
+            "custom-component",
+            "hacs",
+            "homeassistant",
+            "integration",
+            "python",
+            "scheduler"
+        ],
+        "zip_release": false
+    }
+}

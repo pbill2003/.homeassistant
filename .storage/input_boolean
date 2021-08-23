@@ -1,0 +1,20 @@
+{
+    "version": 1,
+    "key": "input_boolean",
+    "data": {
+        "items": [
+            {
+                "name": "String light automatically switched",
+                "id": "string_light_automatically_switched"
+            },
+            {
+                "name": "Garden light automatically switched",
+                "id": "garden_light_automatically_switched"
+            },
+            {
+                "name": "Pond pump automatically switched",
+                "id": "pond_pump_automatically_switched"
+            }
+        ]
+    }
+}

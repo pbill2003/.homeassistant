@@ -24,21 +24,3 @@
     payload_not_available: "false"
     optimistic: false
     retain: true
-
-    # # shelly1-A4CF12F46677 
-  # - platform: mqtt
-    # name: "shelly1-A4CF12F46677 relay"
-    # command_topic: "shellies/shelly1-A4CF12F46677/relay/0/command"
-    # state_topic: "shellies/shelly1-A4CF12F46677/relay/0"
-    # payload_on: "on"
-    # payload_off: "off"
-    # retain: false
-    
-    # # shelly1-A4CF12F41FD4
-  # - platform: mqtt
-    # name: "shelly1-A4CF12F41FD4 relay"
-    # command_topic: "shellies/shelly1-A4CF12F41FD4/relay/0/command"
-    # state_topic: "shellies/shelly1-A4CF12F41FD4/relay/0"
-    # payload_on: "on"
-    # payload_off: "off"
-    # retain: false

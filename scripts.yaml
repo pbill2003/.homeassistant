@@ -291,3 +291,13 @@ create_esp8266_sensors:
         , \"esp8266-da39a3ee5e6b4b0d3255bfef95601890afd80eab\"]\n    }\n}\n"
       retain: true
   mode: single
+wake_media_server:
+  alias: Wake media server
+  sequence:
+  - service: wake_on_lan.send_magic_packet
+    data:
+      broadcast_address: 192.168.247.255
+      mac: 00:27:0e:04:bb:4f
+  mode: parallel
+  max: 10
+  icon: mdi:music

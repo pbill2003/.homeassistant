@@ -3,8 +3,8 @@
     dhw_sensor:
       friendly_name: 'DHW Sensor'
       value_template: >-
-        {{ is_state('binary_sensor.otgw_flame_status', 'on')
-        and is_state('binary_sensor.otgw_dhw_status', 'on') }}
+        {{ is_state('binary_sensor.otgw_flame_status', 'on') }}
+#        and is_state('binary_sensor.otgw_dhw_status', 'on') }}
 
 - platform: trend
   sensors:

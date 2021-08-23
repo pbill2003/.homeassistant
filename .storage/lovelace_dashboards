@@ -4,7 +4,7 @@
     "data": {
         "items": [
             {
-                "require_admin": false,
+                "require_admin": true,
                 "show_in_sidebar": true,
                 "title": "Garden",
                 "url_path": "lovelace-heating",
@@ -13,7 +13,7 @@
                 "icon": "mdi:duck"
             },
             {
-                "require_admin": false,
+                "require_admin": true,
                 "show_in_sidebar": true,
                 "title": "Heating",
                 "url_path": "lovelace-pond",
@@ -22,13 +22,22 @@
                 "icon": "mdi:home-thermometer-outline"
             },
             {
-                "require_admin": false,
+                "require_admin": true,
                 "show_in_sidebar": true,
                 "icon": "mdi:network-outline",
                 "title": "IoT Devices",
                 "url_path": "iot-devices",
                 "mode": "storage",
                 "id": "iot_devices"
+            },
+            {
+                "require_admin": true,
+                "show_in_sidebar": true,
+                "title": "Big Brother",
+                "url_path": "big-brother",
+                "mode": "storage",
+                "id": "big_brother",
+                "icon": "mdi:map-marker-outline"
             }
         ]
     }

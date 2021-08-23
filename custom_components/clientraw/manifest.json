@@ -1,10 +1,10 @@
 {
   "domain": "clientraw",
   "name": "Clientraw",
+  "version": "2.1.1",
   "documentation": "https://github.com/pilotak/homeassistant-clientraw",
+  "issue_tracker": "https://github.com/pilotak/homeassistant-clientraw/issues",
   "requirements": [],
   "dependencies": [],
-  "codeowners": [
-  	"@pilotak"
-  ]
+  "codeowners": ["@pilotak"]
 }

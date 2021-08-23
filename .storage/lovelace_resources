@@ -4,24 +4,24 @@
     "data": {
         "items": [
             {
-                "url": "/local/mini-graph-card-bundle.js?v=0.9.4",
-                "type": "module",
-                "id": "99628516ca4f48849321af72c2ebaf4a"
-            },
-            {
-                "url": "/local/apexcharts-card.js",
-                "type": "module",
-                "id": "10b3cf1d03d446f9aa6c0645df98160f"
-            },
-            {
-                "url": "/local/layout-card.js",
-                "type": "module",
-                "id": "81092ffd84fc4ef1a40cf0995935d46e"
-            },
-            {
                 "url": "/hacsfiles/scheduler-card/scheduler-card.js?hacstag=286270157214",
                 "type": "module",
                 "id": "0db71da0bebd4b23aa5a447d2792b49b"
+            },
+            {
+                "url": "/hacsfiles/mini-graph-card/mini-graph-card-bundle.js?hacstag=1512800620100",
+                "type": "module",
+                "id": "8c8bfbd7562247d485553fbb09bd58cf"
+            },
+            {
+                "url": "/hacsfiles/lovelace-layout-card/layout-card.js?hacstag=156434866230",
+                "type": "module",
+                "id": "e2cb74ebfee643ba9d26862c1a3aac7f"
+            },
+            {
+                "url": "/hacsfiles/apexcharts-card/apexcharts-card.js?hacstag=331701152190",
+                "type": "module",
+                "id": "a49626c7c0b94d8184eb37b7c6b06c95"
             }
         ]
     }

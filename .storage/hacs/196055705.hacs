@@ -1,0 +1,65 @@
+{
+    "version": "6",
+    "key": "hacs/196055705.hacs",
+    "data": {
+        "archived": false,
+        "authors": [
+            "@pilotak"
+        ],
+        "category": "integration",
+        "content_in_root": false,
+        "country": [],
+        "config_flow": false,
+        "default_branch": "master",
+        "description": "Clientraw weather parser (clientraw.txt) for HomeAssistant",
+        "domain": "clientraw",
+        "domains": [
+            "sensor"
+        ],
+        "downloads": 0,
+        "etag_repository": "W/\"bb66e0ceeae7ecc062056c0dde08e1e8c12462a314bb71e90d80f30a73f84d50\"",
+        "file_name": "",
+        "filename": "",
+        "first_install": false,
+        "fork": false,
+        "full_name": "pilotak/homeassistant-clientraw",
+        "hacs": null,
+        "hide": false,
+        "hide_default_branch": false,
+        "homeassistant": "0.103.0",
+        "id": "196055705",
+        "iot_class": "cloud_poll",
+        "installed": true,
+        "installed_commit": "abf1c60",
+        "installed_version": "v2.2.0",
+        "open_issues": 0,
+        "last_commit": "abf1c60",
+        "last_version": "v2.2.0",
+        "last_updated": "2021-03-11T09:06:05Z",
+        "manifest_name": "Clientraw",
+        "new": false,
+        "persistent_directory": null,
+        "pushed_at": "2021-03-11T09:06:05",
+        "releases": true,
+        "render_readme": false,
+        "published_tags": [
+            "v2.2.0",
+            "v2.1.1",
+            "v2.1.0",
+            "v2.0.1",
+            "v2.0.0"
+        ],
+        "selected_tag": null,
+        "show_beta": false,
+        "stargazers_count": 7,
+        "topics": [
+            "clientraw",
+            "davis",
+            "hacs",
+            "hass",
+            "homeassistant",
+            "weather"
+        ],
+        "zip_release": false
+    }
+}
