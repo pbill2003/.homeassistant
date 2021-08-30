@@ -16,8 +16,8 @@
         "domains": [
             "switch"
         ],
-        "downloads": 76,
-        "etag_repository": "W/\"fbaac573d3be8530cffd9fe6ee84f04e947abcc3cbcd45cc1f2e352395d67425\"",
+        "downloads": 85,
+        "etag_repository": "W/\"e22e3527ac9de80a9e49fb66b8662ff3836ab1cc084106a6f60c7e028452eef1\"",
         "file_name": "",
         "filename": "",
         "first_install": false,
@@ -34,7 +34,7 @@
         "installed": true,
         "installed_commit": "bace777",
         "installed_version": "v3.1.3",
-        "open_issues": 3,
+        "open_issues": 4,
         "last_commit": "fc0bbfe",
         "last_version": "v3.1.3",
         "last_updated": "2021-08-23T18:19:55Z",
@@ -53,7 +53,7 @@
         ],
         "selected_tag": null,
         "show_beta": false,
-        "stargazers_count": 142,
+        "stargazers_count": 145,
         "topics": [
             "custom-component",
             "hacs",

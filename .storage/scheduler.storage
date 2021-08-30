@@ -25,7 +25,7 @@
                 ],
                 "repeat_type": "repeat",
                 "name": null,
-                "enabled": false
+                "enabled": true
             },
             {
                 "schedule_id": "f5a579",
@@ -49,7 +49,7 @@
                 ],
                 "repeat_type": "repeat",
                 "name": "",
-                "enabled": false
+                "enabled": true
             },
             {
                 "schedule_id": "261b1f",
@@ -75,7 +75,7 @@
                 ],
                 "repeat_type": "repeat",
                 "name": null,
-                "enabled": false
+                "enabled": true
             },
             {
                 "schedule_id": "7d04b7",
@@ -101,7 +101,7 @@
                 ],
                 "repeat_type": "repeat",
                 "name": null,
-                "enabled": false
+                "enabled": true
             },
             {
                 "schedule_id": "294f2b",
@@ -127,7 +127,7 @@
                 ],
                 "repeat_type": "repeat",
                 "name": null,
-                "enabled": false
+                "enabled": true
             },
             {
                 "schedule_id": "b7c6f6",
@@ -153,7 +153,7 @@
                 ],
                 "repeat_type": "repeat",
                 "name": null,
-                "enabled": false
+                "enabled": true
             },
             {
                 "schedule_id": "d4efa9",
@@ -177,7 +177,7 @@
                 ],
                 "repeat_type": "repeat",
                 "name": null,
-                "enabled": false
+                "enabled": true
             },
             {
                 "schedule_id": "cacf98",
@@ -201,7 +201,7 @@
                 ],
                 "repeat_type": "repeat",
                 "name": null,
-                "enabled": false
+                "enabled": true
             },
             {
                 "schedule_id": "ac001a",

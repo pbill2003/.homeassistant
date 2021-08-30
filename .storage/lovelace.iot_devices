@@ -71,7 +71,8 @@
                                     "include": [
                                         "switch.light_switch",
                                         "switch.shelly1_a4cf12f41fd4",
-                                        "input_boolean.auto_light"
+                                        "input_boolean.garden_light_auto_switched",
+                                        "input_boolean.string_light_auto_switched"
                                     ]
                                 }
                             ],

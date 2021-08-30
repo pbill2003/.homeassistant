@@ -12,7 +12,7 @@
       payload: 0
   mode: single
 - id: '1601121160850'
-  alias: Pump Solar Auto On
+  alias: Pond Pump Solar Auto On
   description: ''
   trigger:
   - platform: numeric_state
@@ -30,13 +30,15 @@
   action:
   - service: input_boolean.turn_on
     data: {}
-    entity_id: input_boolean.auto_pump
+    target:
+      entity_id:
+      - input_boolean.pond_pump_auto_switched
   - service: switch.turn_on
     data: {}
     entity_id: switch.pump_switch
   mode: restart
 - id: '1601121355747'
-  alias: Pump Solar Auto Off
+  alias: Pond Pump Solar Auto Off
   description: ''
   trigger:
   - platform: numeric_state
@@ -47,7 +49,9 @@
   action:
   - service: input_boolean.turn_off
     data: {}
-    entity_id: input_boolean.auto_pump
+    target:
+      entity_id:
+      - input_boolean.pond_pump_auto_switched
   - service: switch.turn_off
     data: {}
     entity_id: switch.pump_switch
@@ -203,7 +207,7 @@
       - switch.shellyswitch25_e8db84a1fff1_channel_1
   mode: single
 - id: '1601151093811'
-  alias: Pump Auto off
+  alias: Pond Pump Auto off
   description: 60 mins limit after manual switch on
   trigger:
   - platform: state
@@ -212,7 +216,7 @@
     for: 00:60:00
   condition:
   - condition: state
-    entity_id: input_boolean.auto_pump
+    entity_id: input_boolean.pond_pump_auto_switched
     state: 'off'
   action:
   - service: switch.turn_off
@@ -220,7 +224,7 @@
     entity_id: switch.pump_switch
   mode: single
 - id: '1601151235217'
-  alias: Light Auto off
+  alias: Garden Light Auto off
   description: 60 mins limit after manual switch on
   trigger:
   - platform: state
@@ -229,7 +233,7 @@
     for: 00:60:00
   condition:
   - condition: state
-    entity_id: input_boolean.auto_light
+    entity_id: input_boolean.garden_light_auto_switched
     state: 'off'
   action:
   - service: switch.turn_off
@@ -388,4 +392,23 @@
       message: 'Setpoint is {{ states(''sensor.otgw_boiler_setpoint'') }} at {{ states.sensor.time.state
         }} '
       title: Boiler setpoint change
+  mode: single
+- id: '1630351121332'
+  alias: String Light Auto off
+  description: 60 mins limit after manual switch on
+  trigger:
+  - platform: state
+    entity_id: switch.shelly1_a4cf12f41fd4
+    to: 'on'
+    for: 00:60:00
+  condition:
+  - condition: state
+    entity_id: input_boolean.string_light_auto_switched
+    state: 'off'
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id:
+      - switch.shelly1_a4cf12f41fd4
   mode: single

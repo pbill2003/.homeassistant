@@ -2,14 +2,17 @@
 config:
 frontend:
 history:
+input_boolean:
+input_datetime:
 logbook:
 map:
 mobile_app:
 person:
 # ssdp:
-# sun:
+sun:
 system_health:
 updater:
+wake_on_lan:
 # zeroconf:
 
 
@@ -53,10 +56,9 @@ mqtt:
   keepalive: 60
  
 
-
 evohome:
   username: pbill2003@gmail.com
-  password: evohome-passwd
+  password: evohome_passwd
   scan_interval: 120 
   
 tplink:
@@ -66,33 +68,5 @@ tplink:
   
 shell_command:
   run_ad5252: python3 /home/homeassistant/.homeassistant/python_scripts/AD5252.py {{ (states('sensor.clientraw_temperature')|float) }}
-  run_gymscript: 'python3 /home/homeassistant/.homeassistant/python_scripts/jb/GymScript_Final.py'
+#  run_gymscript: 'python3 /home/homeassistant/.homeassistant/python_scripts/jb/GymScript_Final.py'
 
-input_boolean:
-  auto_pump:
-    name: 'Pump automatically switched'
-    initial: off
-  auto_light:
-    name: 'Light automatically switched'
-    initial: off
-
-input_datetime:
-#  light_on:
-#    name: 'Light on time'
-#    has_date: false
-#    has_time: true
-#  light_off:
-#    name: 'Light off time'
-#    has_date: false
-#    has_time: true
-  dhw_sensor_on:
-    name: 'DHW sensor on'
-    has_date: true
-    has_time: true
-  dhw_sensor_off:
-    name: 'DHW sensor off'
-    has_date: true
-    has_time: true
-
-
-  
