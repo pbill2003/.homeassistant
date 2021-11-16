@@ -1,213 +1,13 @@
 {
-    "version": 1,
+    "version": 2,
     "key": "scheduler.storage",
     "data": {
         "schedules": [
             {
-                "schedule_id": "e2b7f7",
+                "schedule_id": "69139e",
                 "timeslots": [
                     {
-                        "start": "15:00:00",
-                        "stop": null,
-                        "conditions": [],
-                        "condition_type": null,
-                        "actions": [
-                            {
-                                "service": "switch.turn_on",
-                                "entity_id": "switch.shelly1_a4cf12f46677",
-                                "service_data": {}
-                            }
-                        ]
-                    }
-                ],
-                "weekdays": [
-                    "workday"
-                ],
-                "repeat_type": "repeat",
-                "name": null,
-                "enabled": true
-            },
-            {
-                "schedule_id": "f5a579",
-                "timeslots": [
-                    {
-                        "start": "17:00:00",
-                        "stop": null,
-                        "conditions": [],
-                        "condition_type": null,
-                        "actions": [
-                            {
-                                "service": "switch.turn_off",
-                                "entity_id": "switch.shelly1_a4cf12f46677",
-                                "service_data": {}
-                            }
-                        ]
-                    }
-                ],
-                "weekdays": [
-                    "workday"
-                ],
-                "repeat_type": "repeat",
-                "name": "",
-                "enabled": true
-            },
-            {
-                "schedule_id": "261b1f",
-                "timeslots": [
-                    {
-                        "start": "23:00:00",
-                        "stop": null,
-                        "conditions": [],
-                        "condition_type": null,
-                        "actions": [
-                            {
-                                "service": "switch.turn_off",
-                                "entity_id": "switch.light_switch",
-                                "service_data": {}
-                            }
-                        ]
-                    }
-                ],
-                "weekdays": [
-                    "fri",
-                    "sat",
-                    "sun"
-                ],
-                "repeat_type": "repeat",
-                "name": null,
-                "enabled": true
-            },
-            {
-                "schedule_id": "7d04b7",
-                "timeslots": [
-                    {
-                        "start": "23:00:00",
-                        "stop": null,
-                        "conditions": [],
-                        "condition_type": null,
-                        "actions": [
-                            {
-                                "service": "input_boolean.turn_off",
-                                "entity_id": "input_boolean.auto_light",
-                                "service_data": {}
-                            }
-                        ]
-                    }
-                ],
-                "weekdays": [
-                    "fri",
-                    "sat",
-                    "sun"
-                ],
-                "repeat_type": "repeat",
-                "name": null,
-                "enabled": true
-            },
-            {
-                "schedule_id": "294f2b",
-                "timeslots": [
-                    {
-                        "start": "22:00:00",
-                        "stop": null,
-                        "conditions": [],
-                        "condition_type": null,
-                        "actions": [
-                            {
-                                "service": "switch.turn_on",
-                                "entity_id": "switch.light_switch",
-                                "service_data": {}
-                            }
-                        ]
-                    }
-                ],
-                "weekdays": [
-                    "fri",
-                    "sat",
-                    "sun"
-                ],
-                "repeat_type": "repeat",
-                "name": null,
-                "enabled": true
-            },
-            {
-                "schedule_id": "b7c6f6",
-                "timeslots": [
-                    {
-                        "start": "22:00:00",
-                        "stop": null,
-                        "conditions": [],
-                        "condition_type": null,
-                        "actions": [
-                            {
-                                "service": "input_boolean.turn_on",
-                                "entity_id": "input_boolean.auto_light",
-                                "service_data": {}
-                            }
-                        ]
-                    }
-                ],
-                "weekdays": [
-                    "fri",
-                    "sat",
-                    "sun"
-                ],
-                "repeat_type": "repeat",
-                "name": null,
-                "enabled": true
-            },
-            {
-                "schedule_id": "d4efa9",
-                "timeslots": [
-                    {
-                        "start": "sunset+01:30:00",
-                        "stop": null,
-                        "conditions": [],
-                        "condition_type": null,
-                        "actions": [
-                            {
-                                "service": "switch.turn_off",
-                                "entity_id": "switch.shelly1_a4cf12f41fd4",
-                                "service_data": {}
-                            }
-                        ]
-                    }
-                ],
-                "weekdays": [
-                    "daily"
-                ],
-                "repeat_type": "repeat",
-                "name": null,
-                "enabled": true
-            },
-            {
-                "schedule_id": "cacf98",
-                "timeslots": [
-                    {
-                        "start": "sunset+00:30:00",
-                        "stop": null,
-                        "conditions": [],
-                        "condition_type": null,
-                        "actions": [
-                            {
-                                "service": "switch.turn_on",
-                                "entity_id": "switch.shelly1_a4cf12f41fd4",
-                                "service_data": {}
-                            }
-                        ]
-                    }
-                ],
-                "weekdays": [
-                    "daily"
-                ],
-                "repeat_type": "repeat",
-                "name": null,
-                "enabled": true
-            },
-            {
-                "schedule_id": "ac001a",
-                "timeslots": [
-                    {
-                        "start": "08:00:00",
+                        "start": "06:50:00",
                         "stop": null,
                         "conditions": [],
                         "condition_type": null,
@@ -223,10 +23,249 @@
                 "weekdays": [
                     "daily"
                 ],
+                "start_date": null,
+                "end_date": null,
+                "repeat_type": "repeat",
+                "name": "",
+                "enabled": true
+            },
+            {
+                "schedule_id": "3db98b",
+                "timeslots": [
+                    {
+                        "start": "00:00:00",
+                        "stop": "15:00:00",
+                        "conditions": [],
+                        "condition_type": null,
+                        "actions": [
+                            {
+                                "service": "switch.turn_off",
+                                "entity_id": "switch.shelly1_a4cf12f46677",
+                                "service_data": {}
+                            }
+                        ]
+                    },
+                    {
+                        "start": "15:00:00",
+                        "stop": "17:00:00",
+                        "conditions": [],
+                        "condition_type": null,
+                        "actions": [
+                            {
+                                "service": "switch.turn_on",
+                                "entity_id": "switch.shelly1_a4cf12f46677",
+                                "service_data": {}
+                            }
+                        ]
+                    },
+                    {
+                        "start": "17:00:00",
+                        "stop": "00:00:00",
+                        "conditions": [],
+                        "condition_type": null,
+                        "actions": [
+                            {
+                                "service": "switch.turn_off",
+                                "entity_id": "switch.shelly1_a4cf12f46677",
+                                "service_data": {}
+                            }
+                        ]
+                    }
+                ],
+                "weekdays": [
+                    "workday"
+                ],
+                "start_date": null,
+                "end_date": null,
+                "repeat_type": "repeat",
+                "name": "",
+                "enabled": false
+            },
+            {
+                "schedule_id": "e7d7f3",
+                "timeslots": [
+                    {
+                        "start": "00:00:00",
+                        "stop": "20:30:00",
+                        "conditions": [],
+                        "condition_type": null,
+                        "actions": [
+                            {
+                                "service": "switch.turn_off",
+                                "entity_id": "switch.light_switch",
+                                "service_data": {}
+                            }
+                        ]
+                    },
+                    {
+                        "start": "20:30:00",
+                        "stop": "22:00:00",
+                        "conditions": [],
+                        "condition_type": null,
+                        "actions": [
+                            {
+                                "service": "switch.turn_on",
+                                "entity_id": "switch.light_switch",
+                                "service_data": {}
+                            }
+                        ]
+                    },
+                    {
+                        "start": "22:00:00",
+                        "stop": "00:00:00",
+                        "conditions": [],
+                        "condition_type": null,
+                        "actions": [
+                            {
+                                "service": "switch.turn_off",
+                                "entity_id": "switch.light_switch",
+                                "service_data": {}
+                            }
+                        ]
+                    }
+                ],
+                "weekdays": [
+                    "fri",
+                    "sat",
+                    "sun"
+                ],
+                "start_date": null,
+                "end_date": null,
+                "repeat_type": "repeat",
+                "name": "",
+                "enabled": false
+            },
+            {
+                "schedule_id": "658e37",
+                "timeslots": [
+                    {
+                        "start": "00:00:00",
+                        "stop": "19:00:00",
+                        "conditions": [],
+                        "condition_type": null,
+                        "actions": [
+                            {
+                                "service": "switch.turn_off",
+                                "entity_id": "switch.shelly1_a4cf12f41fd4",
+                                "service_data": {}
+                            }
+                        ]
+                    },
+                    {
+                        "start": "19:00:00",
+                        "stop": "22:30:00",
+                        "conditions": [],
+                        "condition_type": null,
+                        "actions": [
+                            {
+                                "service": "switch.turn_on",
+                                "entity_id": "switch.shelly1_a4cf12f41fd4",
+                                "service_data": {}
+                            }
+                        ]
+                    },
+                    {
+                        "start": "22:30:00",
+                        "stop": "00:00:00",
+                        "conditions": [],
+                        "condition_type": null,
+                        "actions": [
+                            {
+                                "service": "switch.turn_off",
+                                "entity_id": "switch.shelly1_a4cf12f41fd4",
+                                "service_data": {}
+                            }
+                        ]
+                    }
+                ],
+                "weekdays": [
+                    "daily"
+                ],
+                "start_date": null,
+                "end_date": null,
+                "repeat_type": "repeat",
+                "name": null,
+                "enabled": true
+            },
+            {
+                "schedule_id": "856cde",
+                "timeslots": [
+                    {
+                        "start": "19:10:00",
+                        "stop": null,
+                        "conditions": [],
+                        "condition_type": null,
+                        "actions": [
+                            {
+                                "service": "script.1631296746777",
+                                "entity_id": "script.1631296746777",
+                                "service_data": {}
+                            }
+                        ]
+                    }
+                ],
+                "weekdays": [
+                    "workday"
+                ],
+                "start_date": null,
+                "end_date": null,
+                "repeat_type": "repeat",
+                "name": null,
+                "enabled": true
+            },
+            {
+                "schedule_id": "698ad2",
+                "timeslots": [
+                    {
+                        "start": "08:00:00",
+                        "stop": null,
+                        "conditions": [],
+                        "condition_type": null,
+                        "actions": [
+                            {
+                                "service": "script.play_r4_squeezebox_radio",
+                                "entity_id": "script.play_r4_squeezebox_radio",
+                                "service_data": {}
+                            }
+                        ]
+                    }
+                ],
+                "weekdays": [
+                    "workday"
+                ],
+                "start_date": null,
+                "end_date": null,
+                "repeat_type": "repeat",
+                "name": null,
+                "enabled": true
+            },
+            {
+                "schedule_id": "86f860",
+                "timeslots": [
+                    {
+                        "start": "09:00:00",
+                        "stop": null,
+                        "conditions": [],
+                        "condition_type": null,
+                        "actions": [
+                            {
+                                "service": "script.play_r4_squeezebox_radio_off",
+                                "entity_id": "script.play_r4_squeezebox_radio_off",
+                                "service_data": {}
+                            }
+                        ]
+                    }
+                ],
+                "weekdays": [
+                    "workday"
+                ],
+                "start_date": null,
+                "end_date": null,
                 "repeat_type": "repeat",
                 "name": null,
                 "enabled": true
             }
-        ]
+        ],
+        "tags": []
     }
 }

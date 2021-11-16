@@ -9,7 +9,8 @@
                 "device_trackers": [
                     "device_tracker.iphonexr",
                     "device_tracker.ipad",
-                    "device_tracker.s58pro"
+                    "device_tracker.s58pro",
+                    "device_tracker.peters_iphone"
                 ],
                 "id": "pete",
                 "picture": null

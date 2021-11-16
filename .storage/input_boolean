@@ -4,14 +4,6 @@
     "data": {
         "items": [
             {
-                "name": "String light auto switched",
-                "id": "string_light_automatically_switched"
-            },
-            {
-                "name": "Garden light auto switched",
-                "id": "garden_light_automatically_switched"
-            },
-            {
                 "name": "Pond pump auto switched",
                 "id": "pond_pump_automatically_switched"
             }

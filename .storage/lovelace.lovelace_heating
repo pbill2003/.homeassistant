@@ -6,7 +6,7 @@
             "views": [
                 {
                     "title": "Pond",
-                    "icon": "mdi:duck",
+                    "icon": "mdi:flower-outline",
                     "badges": [],
                     "cards": [
                         {
@@ -27,7 +27,7 @@
                                         },
                                         {
                                             "entity": "switch.pump_switch",
-                                            "icon": "mdi:fan",
+                                            "icon": "mdi:pump",
                                             "name": "Pond pump"
                                         }
                                     ],

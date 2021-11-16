@@ -17,14 +17,24 @@
                                     "icon": "mdi:string-lights"
                                 },
                                 {
-                                    "entity": "switch.shellyswitch25_e8db84a1fff1_channel_1",
-                                    "icon": "mdi:fan",
-                                    "name": "Bathroom fan"
+                                    "entity": "switch.light_switch",
+                                    "name": "Garden lights",
+                                    "icon": "mdi:lightbulb-outline"
+                                },
+                                {
+                                    "entity": "switch.pump_switch",
+                                    "name": "Pond pump",
+                                    "icon": "mdi:pump"
                                 },
                                 {
                                     "entity": "switch.shelly1_a4cf12f46677",
                                     "icon": "mdi:fan",
                                     "name": "Underfloor fan"
+                                },
+                                {
+                                    "entity": "switch.shellyswitch25_e8db84a1fff1_channel_1",
+                                    "icon": "mdi:fan",
+                                    "name": "Bathroom fan"
                                 },
                                 {
                                     "entity": "switch.smartplug",
@@ -67,12 +77,10 @@
                             "groups": [
                                 {
                                     "name": "Lights",
-                                    "icon": "mdi:garden",
+                                    "icon": "mdi:spanner",
                                     "include": [
                                         "switch.light_switch",
-                                        "switch.shelly1_a4cf12f41fd4",
-                                        "input_boolean.garden_light_auto_switched",
-                                        "input_boolean.string_light_auto_switched"
+                                        "switch.shelly1_a4cf12f41fd4"
                                     ]
                                 }
                             ],
@@ -93,6 +101,15 @@
                             "include": [
                                 "script.wake_media_server"
                             ]
+                        },
+                        {
+                            "type": "custom:scheduler-card",
+                            "discover_existing": false,
+                            "include": [
+                                "script.play_r4_squeezebox_radio",
+                                "script.play_r4_squeezebox_radio_off"
+                            ],
+                            "title": "Squeezebox radio schedule"
                         }
                     ]
                 }

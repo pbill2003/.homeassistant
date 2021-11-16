@@ -10,7 +10,7 @@
                 "url_path": "lovelace-heating",
                 "mode": "storage",
                 "id": "lovelace_heating",
-                "icon": "mdi:duck"
+                "icon": "mdi:flower-outline"
             },
             {
                 "require_admin": true,

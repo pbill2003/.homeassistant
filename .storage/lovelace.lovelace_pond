@@ -36,6 +36,34 @@
                                 }
                             ],
                             "title": "CH Info"
+                        },
+                        {
+                            "type": "custom:mini-graph-card",
+                            "entities": [
+                                {
+                                    "entity": "sensor.clientraw_temperature",
+                                    "name": "Horfield Temp",
+                                    "color": "red",
+                                    "show_fill": false
+                                },
+                                {
+                                    "entity": "sensor.clientraw_humidity",
+                                    "name": "Horfield Humidity",
+                                    "color": "green",
+                                    "y_axis": "secondary"
+                                }
+                            ],
+                            "hour24": true,
+                            "hours_to_show": 12,
+                            "line_width": 1,
+                            "more_info": false,
+                            "name": "Air temperature",
+                            "points_per_hour": 4,
+                            "refresh_interval": 0,
+                            "show": {
+                                "fill": false,
+                                "labels": true
+                            }
                         }
                     ]
                 },
@@ -274,34 +302,6 @@
                             ],
                             "hours_to_show": 2,
                             "refresh_interval": 0
-                        },
-                        {
-                            "type": "custom:mini-graph-card",
-                            "entities": [
-                                {
-                                    "entity": "sensor.clientraw_temperature",
-                                    "name": "Horfield Temp",
-                                    "color": "red",
-                                    "show_fill": false
-                                },
-                                {
-                                    "entity": "sensor.clientraw_humidity",
-                                    "name": "Horfield Humidity",
-                                    "color": "green",
-                                    "y_axis": "secondary"
-                                }
-                            ],
-                            "hour24": true,
-                            "hours_to_show": 12,
-                            "line_width": 1,
-                            "more_info": false,
-                            "name": "Air temperature",
-                            "points_per_hour": 4,
-                            "refresh_interval": 0,
-                            "show": {
-                                "fill": false,
-                                "labels": true
-                            }
                         }
                     ]
                 },
@@ -434,6 +434,61 @@
                     ]
                 },
                 {
+                    "title": "Reset",
+                    "path": "reset",
+                    "icon": "mdi:lock-reset",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "button",
+                                    "tap_action": {
+                                        "action": "call-service",
+                                        "service": "script.evohome_custom"
+                                    },
+                                    "entity": "climate.manorrd",
+                                    "icon": "mdi:radiator",
+                                    "icon_height": "30px",
+                                    "name": "Evohome Heating Off",
+                                    "hold_action": {
+                                        "action": "none"
+                                    }
+                                },
+                                {
+                                    "type": "button",
+                                    "tap_action": {
+                                        "action": "call-service",
+                                        "service": "script.evohome_followschedule"
+                                    },
+                                    "entity": "climate.manorrd",
+                                    "icon": "mdi:radiator",
+                                    "name": "Evohome Follow Schedule",
+                                    "icon_height": "30px",
+                                    "hold_action": {
+                                        "action": "none"
+                                    },
+                                    "show_state": false
+                                },
+                                {
+                                    "type": "button",
+                                    "tap_action": {
+                                        "action": "call-service",
+                                        "service": "script.otgw_reset"
+                                    },
+                                    "entity": "climate.manorrd",
+                                    "name": "OTGW Reset to Evohome",
+                                    "icon_height": "30px",
+                                    "hold_action": {
+                                        "action": "none"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
                     "title": "Nerd Mode",
                     "path": "max-nerd",
                     "panel": true,
@@ -516,61 +571,6 @@
                                             "color": "orange"
                                         }
                                     ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "title": "Reset",
-                    "path": "reset",
-                    "icon": "mdi:lock-reset",
-                    "badges": [],
-                    "cards": [
-                        {
-                            "type": "vertical-stack",
-                            "cards": [
-                                {
-                                    "type": "button",
-                                    "tap_action": {
-                                        "action": "call-service",
-                                        "service": "script.evohome_custom"
-                                    },
-                                    "entity": "climate.manorrd",
-                                    "icon": "mdi:radiator",
-                                    "icon_height": "30px",
-                                    "name": "Evohome Heating Off",
-                                    "hold_action": {
-                                        "action": "none"
-                                    }
-                                },
-                                {
-                                    "type": "button",
-                                    "tap_action": {
-                                        "action": "call-service",
-                                        "service": "script.evohome_followschedule"
-                                    },
-                                    "entity": "climate.manorrd",
-                                    "icon": "mdi:radiator",
-                                    "name": "Evohome Follow Schedule",
-                                    "icon_height": "30px",
-                                    "hold_action": {
-                                        "action": "none"
-                                    },
-                                    "show_state": false
-                                },
-                                {
-                                    "type": "button",
-                                    "tap_action": {
-                                        "action": "call-service",
-                                        "service": "script.otgw_reset"
-                                    },
-                                    "entity": "climate.manorrd",
-                                    "name": "OTGW Reset to Evohome",
-                                    "icon_height": "30px",
-                                    "hold_action": {
-                                        "action": "none"
-                                    }
                                 }
                             ]
                         }

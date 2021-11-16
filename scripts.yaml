@@ -301,3 +301,30 @@ wake_media_server:
   mode: parallel
   max: 10
   icon: mdi:music
+play_r4_squeezebox_radio:
+  sequence:
+  - service: media_player.turn_on
+    target:
+      entity_id: media_player.squeezebox_radio
+  - service: media_player.volume_set
+    target:
+      entity_id: media_player.squeezebox_radio
+    data:
+      volume_level: 0.22
+  - service: media_player.play_media
+    target:
+      entity_id: media_player.squeezebox_radio
+    data:
+      media_content_id: sounds://_LIVE_bbc_radio_fourfm
+      media_content_type: music
+  mode: single
+  alias: Play R4 Squeezebox radio
+  icon: mdi:music
+play_r4_squeezebox_radio_off:
+  alias: Play R4 Squeezebox radio off
+  sequence:
+  - service: media_player.turn_off
+    target:
+      entity_id: media_player.squeezebox_radio
+  mode: single
+  icon: mdi:music-off

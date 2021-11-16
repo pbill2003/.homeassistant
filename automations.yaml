@@ -223,23 +223,6 @@
     data: {}
     entity_id: switch.pump_switch
   mode: single
-- id: '1601151235217'
-  alias: Garden Light Auto off
-  description: 60 mins limit after manual switch on
-  trigger:
-  - platform: state
-    entity_id: switch.light_switch
-    to: 'on'
-    for: 00:60:00
-  condition:
-  - condition: state
-    entity_id: input_boolean.garden_light_auto_switched
-    state: 'off'
-  action:
-  - service: switch.turn_off
-    data: {}
-    entity_id: switch.light_switch
-  mode: single
 - id: '1601151392561'
   alias: Set ATAG Outside Temp
   description: ''
@@ -393,17 +376,18 @@
         }} '
       title: Boiler setpoint change
   mode: single
-- id: '1630351121332'
-  alias: String Light Auto off
-  description: 60 mins limit after manual switch on
+- id: '1631215436548'
+  alias: String Light Auto off (Duplicate)
+  description: Switches off 60 mins after manual switch on (checks whether light has
+    been turned on by the schedule in the meantime)
   trigger:
   - platform: state
     entity_id: switch.shelly1_a4cf12f41fd4
     to: 'on'
-    for: 00:60:00
+    for: 00:01:00
   condition:
   - condition: state
-    entity_id: input_boolean.string_light_auto_switched
+    entity_id: switch.schedule_658e37
     state: 'off'
   action:
   - service: switch.turn_off
@@ -411,4 +395,22 @@
     target:
       entity_id:
       - switch.shelly1_a4cf12f41fd4
-  mode: single
+  mode: restart
+- id: '1631216719809'
+  alias: Garden Light Auto off (Duplicate)
+  description: Switches off 60 mins after manual switch on (checks whether light has
+    been turned on by the schedule in the meantime)
+  trigger:
+  - platform: state
+    entity_id: switch.light_switch
+    to: 'on'
+    for: 00:60:00
+  condition:
+  - condition: state
+    entity_id: switch.schedule_e7d7f3
+    state: 'off'
+  action:
+  - service: switch.turn_off
+    data: {}
+    entity_id: switch.light_switch
+  mode: restart
