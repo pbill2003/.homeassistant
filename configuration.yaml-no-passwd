@@ -15,8 +15,6 @@ updater:
 wake_on_lan:
 # zeroconf:
 
-
-
 automation: !include automations.yaml
 binary_sensor: !include binary_sensors.yaml
 recorder: !include recorder.yaml
@@ -46,27 +44,22 @@ logger:
 ##    homeassistant.components.discovery: warn
 ##    homeassistant.helpers.script: warn
 
-
-
-
 mqtt:
   broker: hassbian.localdomain
   port: 1883
   discovery: true
   keepalive: 60
  
-
 evohome:
   username: pbill2003@gmail.com
-  password: evohome_passwd
+  password: evohome_passwd_here
   scan_interval: 120 
   
-tplink:
-  discovery: false
-  switch:
-    - host: hs110.localdomain  
+##tplink:
+##  discovery: false
+##  switch:
+##    - host: hs110.localdomain  
   
 shell_command:
   run_ad5252: python3 /home/homeassistant/.homeassistant/python_scripts/AD5252.py {{ (states('sensor.clientraw_temperature')|float) }}
-#  run_gymscript: 'python3 /home/homeassistant/.homeassistant/python_scripts/jb/GymScript_Final.py'
 

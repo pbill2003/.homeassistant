@@ -153,7 +153,7 @@
                     },
                     {
                         "start": "19:00:00",
-                        "stop": "22:30:00",
+                        "stop": "22:00:00",
                         "conditions": [],
                         "condition_type": null,
                         "actions": [
@@ -165,7 +165,7 @@
                         ]
                     },
                     {
-                        "start": "22:30:00",
+                        "start": "22:00:00",
                         "stop": "00:00:00",
                         "conditions": [],
                         "condition_type": null,
@@ -237,7 +237,7 @@
                 "end_date": null,
                 "repeat_type": "repeat",
                 "name": null,
-                "enabled": true
+                "enabled": false
             },
             {
                 "schedule_id": "86f860",
@@ -263,7 +263,7 @@
                 "end_date": null,
                 "repeat_type": "repeat",
                 "name": null,
-                "enabled": true
+                "enabled": false
             }
         ],
         "tags": []

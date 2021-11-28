@@ -13,13 +13,7 @@
                             "type": "map",
                             "entities": [
                                 {
-                                    "entity": "device_tracker.iphonexr"
-                                },
-                                {
-                                    "entity": "device_tracker.ipad"
-                                },
-                                {
-                                    "entity": "device_tracker.s58pro"
+                                    "entity": "device_tracker.iphone11"
                                 },
                                 {
                                     "entity": "zone.cycling_home"

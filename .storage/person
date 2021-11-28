@@ -7,10 +7,9 @@
                 "name": "Pete",
                 "user_id": "ec3b75e2f5c74ef28663068cf288842d",
                 "device_trackers": [
-                    "device_tracker.iphonexr",
                     "device_tracker.ipad",
                     "device_tracker.s58pro",
-                    "device_tracker.peters_iphone"
+                    "device_tracker.iphone11"
                 ],
                 "id": "pete",
                 "picture": null

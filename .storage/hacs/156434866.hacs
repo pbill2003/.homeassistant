@@ -13,7 +13,7 @@
         "domain": "",
         "domains": [],
         "downloads": 0,
-        "etag_repository": "W/\"aec3452c3d03026e799ace597f6c268e84b5ae4cde4c645477a429432f1b02be\"",
+        "etag_repository": "W/\"f239837cfe7115d11c1c50ab8effdf88cb5c881bf8e0de956b8d01c8e498edde\"",
         "file_name": "layout-card.js",
         "filename": "",
         "first_install": false,
@@ -28,7 +28,7 @@
         "installed": true,
         "installed_commit": "866284a",
         "installed_version": "2.3.1",
-        "open_issues": 15,
+        "open_issues": 18,
         "last_commit": "866284a",
         "last_version": "2.3.1",
         "last_updated": "2021-08-31T21:11:47Z",
@@ -47,7 +47,7 @@
         ],
         "selected_tag": null,
         "show_beta": false,
-        "stargazers_count": 422,
+        "stargazers_count": 425,
         "topics": [],
         "zip_release": false
     }

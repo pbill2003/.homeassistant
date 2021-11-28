@@ -414,3 +414,13 @@
     data: {}
     entity_id: switch.light_switch
   mode: restart
+- id: '1637091564419'
+  alias: Home assistant shutdown - OTGW reset
+  description: ''
+  trigger:
+  - platform: homeassistant
+    event: shutdown
+  condition: []
+  action:
+  - service: script.otgw_reset
+  mode: single
