@@ -17,7 +17,7 @@
             "switch"
         ],
         "downloads": 15,
-        "etag_repository": "W/\"427c66b29cf70ee3adbaa9d753ef70335ec1803b90e06b41012b4ad106dbe1fa\"",
+        "etag_repository": "W/\"26591d17cd94641b679afa4e23f37e019e3478cb3502cdcc34bb843942b8fbad\"",
         "file_name": "",
         "filename": "",
         "first_install": false,
@@ -53,7 +53,7 @@
         ],
         "selected_tag": null,
         "show_beta": false,
-        "stargazers_count": 175,
+        "stargazers_count": 176,
         "topics": [
             "custom-component",
             "hacs",

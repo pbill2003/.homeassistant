@@ -42,7 +42,7 @@ create_otgw_sensors:
         \     \"manufacturer\": \"Pete\",\n      \"name\": \"PY-OTGW-MQTT\",\n   \
         \   \"model\": \"v2.0\",\n      \"identifiers\": [\"py-otgw-mqtt\", \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aab\"\
         ]\n    }\n}\n"
-      retain: true
+      retain: false
   - service: mqtt.publish
     data:
       topic: homeassistant/sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aac/otgw_evohome_setpoint/config
@@ -53,7 +53,7 @@ create_otgw_sensors:
         \      \"manufacturer\": \"Pete\",\n      \"name\": \"PY-OTGW-MQTT\",\n  \
         \    \"model\": \"v2.0\",\n      \"identifiers\": [\"py-otgw-mqtt\", \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aac\"\
         ]\n    }\n}\n"
-      retain: true
+      retain: false
   - service: mqtt.publish
     data:
       topic: homeassistant/sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aad/otgw_flame_modulation/config
@@ -64,7 +64,7 @@ create_otgw_sensors:
         \ \"device\": {\n      \"manufacturer\": \"Pete\",\n      \"name\": \"PY-OTGW-MQTT\"\
         ,\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"py-otgw-mqtt\", \"\
         py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aad\"]\n    }\n}\n"
-      retain: true
+      retain: false
   - service: mqtt.publish
     data:
       topic: homeassistant/sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aae/otgw_boiler_max_modulation/config
@@ -75,7 +75,7 @@ create_otgw_sensors:
         ,\n  \"device\": {\n      \"manufacturer\": \"Pete\",\n      \"name\": \"\
         PY-OTGW-MQTT\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"py-otgw-mqtt\"\
         , \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aae\"]\n    }\n}\n"
-      retain: true
+      retain: false
   - service: mqtt.publish
     data:
       topic: homeassistant/sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aaf/otgw_evohome_max_modulation/config
@@ -86,7 +86,7 @@ create_otgw_sensors:
         ,\n  \"device\": {\n      \"manufacturer\": \"Pete\",\n      \"name\": \"\
         PY-OTGW-MQTT\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"py-otgw-mqtt\"\
         , \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aaf\"]\n    }\n}\n"
-      retain: true
+      retain: false
   - service: mqtt.publish
     data:
       topic: homeassistant/sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aba/otgw_ch_feed_boiler/config
@@ -97,7 +97,7 @@ create_otgw_sensors:
         : {\n      \"manufacturer\": \"Pete\",\n      \"name\": \"PY-OTGW-MQTT\",\n\
         \      \"model\": \"v2.0\",\n      \"identifiers\": [\"py-otgw-mqtt\", \"\
         py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aba\"]\n    }\n}\n"
-      retain: true
+      retain: false
   - service: mqtt.publish
     data:
       topic: homeassistant/sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abb/otgw_ch_return_boiler/config
@@ -108,7 +108,7 @@ create_otgw_sensors:
         device\": {\n      \"manufacturer\": \"Pete\",\n      \"name\": \"PY-OTGW-MQTT\"\
         ,\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"py-otgw-mqtt\", \"\
         py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abb\"]\n    }\n}\n"
-      retain: true
+      retain: false
   - service: mqtt.publish
     data:
       topic: homeassistant/sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abc/otgw_ch_water_pressure/config
@@ -119,7 +119,7 @@ create_otgw_sensors:
         \      \"manufacturer\": \"Pete\",\n      \"name\": \"PY-OTGW-MQTT\",\n  \
         \    \"model\": \"v2.0\",\n      \"identifiers\": [\"py-otgw-mqtt\", \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abc\"\
         ]\n    }\n}\n"
-      retain: true
+      retain: false
   - service: mqtt.publish
     data:
       topic: homeassistant/sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aca/otgw_ch_max_setpoint/config
@@ -130,7 +130,7 @@ create_otgw_sensors:
         : {\n      \"manufacturer\": \"Pete\",\n      \"name\": \"PY-OTGW-MQTT\",\n\
         \      \"model\": \"v2.0\",\n      \"identifiers\": [\"py-otgw-mqtt\", \"\
         py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80aca\"]\n    }\n}\n"
-      retain: true
+      retain: false
   - service: mqtt.publish
     data:
       topic: homeassistant/binary_sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abd/otgw_flame_status/config
@@ -141,7 +141,7 @@ create_otgw_sensors:
         Pete\",\n      \"name\": \"PY-OTGW-MQTT\",\n      \"model\": \"v2.0\",\n \
         \     \"identifiers\": [\"py-otgw-mqtt\", \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abd\"\
         ]\n    }\n}\n"
-      retain: true
+      retain: false
   - service: mqtt.publish
     data:
       topic: homeassistant/binary_sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abe/otgw_ch_status/config
@@ -152,7 +152,7 @@ create_otgw_sensors:
         ,\n      \"name\": \"PY-OTGW-MQTT\",\n      \"model\": \"v2.0\",\n      \"\
         identifiers\": [\"py-otgw-mqtt\", \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abe\"\
         ]\n    }\n}\n"
-      retain: true
+      retain: false
   - service: mqtt.publish
     data:
       topic: homeassistant/binary_sensor/py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abf/otgw_dhw_status/config
@@ -163,7 +163,7 @@ create_otgw_sensors:
         Pete\",\n      \"name\": \"PY-OTGW-MQTT\",\n      \"model\": \"v2.0\",\n \
         \     \"identifiers\": [\"py-otgw-mqtt\", \"py-otgw-mqtt-da39a3ee5e6b4b0d3255bfef95601890afd80abf\"\
         ]\n    }\n}\n"
-      retain: true
+      retain: false
   mode: single
 create_solar_sensors:
   alias: Create solar sensors
@@ -178,7 +178,7 @@ create_solar_sensors:
         ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
         : \"EPSOLAR\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"epsolar\"\
         , \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fab\"]\n    }\n}\n"
-      retain: true
+      retain: false
   - service: mqtt.publish
     data:
       topic: homeassistant/sensor/epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fac/solar_panel_current/config
@@ -189,7 +189,7 @@ create_solar_sensors:
         ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
         : \"EPSOLAR\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"epsolar\"\
         , \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fac\"]\n    }\n}\n"
-      retain: true
+      retain: false
   - service: mqtt.publish
     data:
       topic: homeassistant/sensor/epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fad/solar_panel_power/config
@@ -200,7 +200,7 @@ create_solar_sensors:
         ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
         : \"EPSOLAR\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"epsolar\"\
         , \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fad\"]\n    }\n}\n"
-      retain: true
+      retain: false
   - service: mqtt.publish
     data:
       topic: homeassistant/sensor/epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fba/load_voltage/config
@@ -211,7 +211,7 @@ create_solar_sensors:
         ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
         : \"EPSOLAR\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"epsolar\"\
         , \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fba\"]\n    }\n}\n"
-      retain: true
+      retain: false
   - service: mqtt.publish
     data:
       topic: homeassistant/sensor/epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fbb/load_current/config
@@ -222,7 +222,7 @@ create_solar_sensors:
         ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
         : \"EPSOLAR\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"epsolar\"\
         , \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fbb\"]\n    }\n}\n"
-      retain: true
+      retain: false
   - service: mqtt.publish
     data:
       topic: homeassistant/sensor/epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fbc/load_power/config
@@ -233,7 +233,7 @@ create_solar_sensors:
         ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
         : \"EPSOLAR\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"epsolar\"\
         , \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fbc\"]\n    }\n}\n"
-      retain: true
+      retain: false
   - service: mqtt.publish
     data:
       topic: homeassistant/sensor/epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fca/battery_voltage/config
@@ -244,7 +244,7 @@ create_solar_sensors:
         ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
         : \"EPSOLAR\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"epsolar\"\
         , \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fca\"]\n    }\n}\n"
-      retain: true
+      retain: false
   - service: mqtt.publish
     data:
       topic: homeassistant/sensor/epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fcb/battery_current/config
@@ -255,7 +255,7 @@ create_solar_sensors:
         ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
         : \"EPSOLAR\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"epsolar\"\
         , \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fcb\"]\n    }\n}\n"
-      retain: true
+      retain: false
   - service: mqtt.publish
     data:
       topic: homeassistant/sensor/epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fcc/battery_percentage/config
@@ -265,7 +265,7 @@ create_solar_sensors:
         ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
         : \"EPSOLAR\",\n      \"model\": \"v2.0\",\n      \"identifiers\": [\"epsolar\"\
         , \"epsolar-da39a3ee5e6b4b0d3255bfef95601890afd80fcc\"]\n    }\n}\n"
-      retain: true
+      retain: false
   mode: single
 create_esp8266_sensors:
   alias: Create ESP8266 sensors
@@ -279,7 +279,7 @@ create_esp8266_sensors:
         ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
         : \"ESP8622\",\n      \"model\": \"v1.0\",\n      \"identifiers\": [\"esp8266\"\
         , \"esp8266-da39a3ee5e6b4b0d3255bfef95601890afd80eaa\"]\n    }\n}\n"
-      retain: true
+      retain: false
   - service: mqtt.publish
     data:
       topic: homeassistant/sensor/esp8266-da39a3ee5e6b4b0d3255bfef95601890afd80eab/sensor_epsolar_wifi/config
@@ -289,7 +289,7 @@ create_esp8266_sensors:
         ,\n  \"device\": {\n      \"manufacturer\": \"Alistair\",\n      \"name\"\
         : \"ESP8622\",\n      \"model\": \"v1.0\",\n      \"identifiers\": [\"esp8266\"\
         , \"esp8266-da39a3ee5e6b4b0d3255bfef95601890afd80eab\"]\n    }\n}\n"
-      retain: true
+      retain: false
   mode: single
 wake_media_server:
   alias: Wake media server

@@ -9,15 +9,15 @@
             "category": "integration",
             "description": "HACS gives you a powerful UI to handle downloads of all your custom needs.",
             "domain": "hacs",
-            "downloads": 33043,
-            "etag_repository": "W/\"544f1b5480fc8162ae48af7e0ee52c059c49695959fc04629faac527eb12057c\"",
+            "downloads": 4021,
+            "etag_repository": "W/\"b937215cb6277e70ce76973c41b2f3a4343717ba59f22cf9c8f07e089b955245\"",
             "full_name": "hacs/integration",
             "first_install": false,
-            "installed_commit": "5813c48",
+            "installed_commit": "eb20f45",
             "installed": true,
-            "last_commit": "5813c48",
-            "last_release_tag": "1.17.2",
-            "last_updated": "2021-11-21T17:14:23Z",
+            "last_commit": "eb20f45",
+            "last_release_tag": "1.18.0",
+            "last_updated": "2021-11-28T18:29:12Z",
             "name": "hacs",
             "new": false,
             "repository_manifest": {
@@ -30,7 +30,7 @@
             },
             "selected_tag": null,
             "show_beta": false,
-            "stars": 2063,
+            "stars": 2070,
             "topics": [
                 "community",
                 "hacktoberfest",
@@ -40,7 +40,7 @@
                 "package-manager",
                 "python"
             ],
-            "version_installed": "1.17.2"
+            "version_installed": "1.18.0"
         },
         "224374747": {
             "authors": [],
@@ -12992,7 +12992,7 @@
             "description": "Custom component for HA that enables the creation of scheduler entities",
             "domain": "scheduler",
             "downloads": 15,
-            "etag_repository": "W/\"427c66b29cf70ee3adbaa9d753ef70335ec1803b90e06b41012b4ad106dbe1fa\"",
+            "etag_repository": "W/\"26591d17cd94641b679afa4e23f37e019e3478cb3502cdcc34bb843942b8fbad\"",
             "full_name": "nielsfaber/scheduler-component",
             "first_install": false,
             "installed_commit": "7463a5a",
@@ -13014,7 +13014,7 @@
             },
             "selected_tag": null,
             "show_beta": false,
-            "stars": 175,
+            "stars": 176,
             "topics": [
                 "custom-component",
                 "hacs",
@@ -13552,14 +13552,14 @@
             "description": "Clientraw weather parser (clientraw.txt) for HomeAssistant",
             "domain": "clientraw",
             "downloads": 0,
-            "etag_repository": "W/\"bb66e0ceeae7ecc062056c0dde08e1e8c12462a314bb71e90d80f30a73f84d50\"",
+            "etag_repository": "W/\"bc32592ceede4dffb8c4636ab2dc086318af8f929601a6177c9c9b19fb5c8729\"",
             "full_name": "pilotak/homeassistant-clientraw",
             "first_install": false,
-            "installed_commit": "abf1c60",
+            "installed_commit": "d9df606",
             "installed": true,
-            "last_commit": "abf1c60",
-            "last_release_tag": "v2.2.0",
-            "last_updated": "2021-11-24T18:09:45Z",
+            "last_commit": "d9df606",
+            "last_release_tag": "v2.2.1",
+            "last_updated": "2021-11-28T20:14:21Z",
             "name": "clientraw",
             "new": false,
             "repository_manifest": {
@@ -13581,7 +13581,7 @@
                 "homeassistant",
                 "weather"
             ],
-            "version_installed": "v2.2.0"
+            "version_installed": "v2.2.1"
         },
         "207881337": {
             "authors": [
@@ -24738,8 +24738,8 @@
             "category": "plugin",
             "description": "Minimalistic graph card for Home Assistant Lovelace UI",
             "domain": "",
-            "downloads": 97579,
-            "etag_repository": "W/\"071f34278cf7188dfb3a867c9e4ac3b9118e8ae6ebed70b2791f094e1c052430\"",
+            "downloads": 97903,
+            "etag_repository": "W/\"ff015b23249a6ac77baed1b6bbc83af0b0aaaa02ea670a59cf194b30ff1b8e8a\"",
             "full_name": "kalkih/mini-graph-card",
             "first_install": false,
             "installed_commit": "e889848",
@@ -24755,7 +24755,7 @@
             },
             "selected_tag": null,
             "show_beta": false,
-            "stars": 1711,
+            "stars": 1714,
             "topics": [
                 "automation",
                 "custom",
@@ -25805,7 +25805,7 @@
             "category": "plugin",
             "description": "HA Lovelace card for control of scheduler entities",
             "domain": "",
-            "downloads": 5182,
+            "downloads": 5357,
             "etag_repository": "W/\"34e0393c43f2f281946a9f6c1693136f63f223662a6e61fed48ce04b4a9599bd\"",
             "full_name": "nielsfaber/scheduler-card",
             "first_install": false,
@@ -26339,7 +26339,7 @@
             "category": "plugin",
             "description": "\ud83d\udcc8 A Lovelace card to display advanced graphs and charts based on ApexChartsJS for Home Assistant",
             "domain": "",
-            "downloads": 6663,
+            "downloads": 6784,
             "etag_repository": "W/\"5ecae7ce18716d70d4f4f49d161102413ca33cb98212a9fd27e95e1913e75f44\"",
             "full_name": "RomRider/apexcharts-card",
             "first_install": false,
@@ -26908,7 +26908,7 @@
             "description": "\ud83d\udd39 Get more control over the placement of lovelace cards.",
             "domain": "",
             "downloads": 0,
-            "etag_repository": "W/\"f239837cfe7115d11c1c50ab8effdf88cb5c881bf8e0de956b8d01c8e498edde\"",
+            "etag_repository": "W/\"ded0c3a3d22c1b0b0231f75bd6bc302be1e0453882aa3605bcd03dc6ddad7eef\"",
             "full_name": "thomasloven/lovelace-layout-card",
             "first_install": false,
             "installed_commit": "866284a",
@@ -26925,7 +26925,7 @@
             },
             "selected_tag": null,
             "show_beta": false,
-            "stars": 425,
+            "stars": 426,
             "topics": [],
             "version_installed": "2.3.1"
         },
